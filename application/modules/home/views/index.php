@@ -1,0 +1,1 @@
+<?php echo modules::run('adfrees/inc_home'); ?>
