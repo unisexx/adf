@@ -13,6 +13,17 @@ $(document).ready(function(){
 		// });
     // }
 	
+	$('.thumbnail').click(function(){
+		$('.loading').show();
+		$(this).css('background','#ddd').closest('.span1').siblings().find('img').css('background','#fff');
+		$.post('adfrees/getImg', {
+            "id":$(this).prev('input[name=thumbnail_id]').val()
+        },function(data){
+        	$('.wraptocenter').html(data);
+        	$('.loading').hide();
+        });
+	});
+	
 	$('.del-uppic').click(function(){
 		if(confirm('ต้องการลบรูปนี้')){
 			var id = $(this).closest('.uppic-blk').find('input[name="attach_id[]"]').val();

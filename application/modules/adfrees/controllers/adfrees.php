@@ -32,5 +32,12 @@ class Adfrees extends Public_Controller {
             
         $this->template->build('view',$data);
     }
+    
+    function getImg(){
+        if($_POST){
+            $attach = new Attach($_POST['id']);
+            $this->output->set_output("<img src='".$attach->url."'>");
+        }
+    }
 }
 ?>

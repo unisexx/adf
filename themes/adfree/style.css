@@ -8,13 +8,30 @@ h3{font-size: 16px !important;}
 h4{font-size: 15px !important;}
 label.error{color:red;}
 
+.btn-xlarge {
+width: 100%;
+text-align: center;
+padding: 8px 10px 6px 0;
+font-size: 44px;
+font-weight: bold;
+line-height: normal;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+
 /* adfree */
+.loading-blk{height:10px;}
+.loading{display:none;}
 .thumbrow{margin-top:10px;}
+.thumbrow img{cursor: pointer;}
+.thumbrow>:first-child img{background:#ddd;}
 .wraptocenter {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
     border: 8px solid #d7d7d7;
+    background:#fafafa;
     width: 50%;
     height: 480px;
 }
