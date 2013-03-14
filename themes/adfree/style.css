@@ -1,8 +1,45 @@
 body{padding-top: 60px;padding-bottom: 40px;}
+h1,h2,h3{line-height:30px;}
+h1,h2,h3{font-weight:bold;}
+h4,h5,h6{font-weight:normal;}
+h1{font-size: 25px !important;}
+h2{font-size: 18px !important;}
+h3{font-size: 16px !important;}
+h4{font-size: 15px !important;}
 label.error{color:red;}
 
-/* breadcrumb wizard -------------------------------------------------- */
+/* adfree */
+.thumbrow{margin-top:10px;}
+.wraptocenter {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border: 8px solid #d7d7d7;
+    width: 50%;
+    height: 480px;
+}
+.wraptocenter * {
+    vertical-align: middle;
+}
+/*\*//*/
+.wraptocenter {
+    display: block;
+}
+.wraptocenter span {
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+}
+/**/
 
+<!--[if lt IE 8]>
+.wraptocenter span {
+    display: inline-block;
+    height: 100%;
+}
+<![endif]-->
+
+/* breadcrumb wizard */
 .wizard a {
     padding: 10px 12px 10px;
     margin-right: 5px;

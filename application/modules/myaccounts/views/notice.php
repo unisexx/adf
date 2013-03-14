@@ -20,6 +20,7 @@
                 <td><?php echo $adfree->adf_category->title?></td>
                 <td><?php echo $adfree->adf_sub_category->title?></td>
                 <td>
+                    <a href="adfrees/view/<?php echo $adfree->id?>" target="_blank"><div class="btn btn-mini btn-success">วิว</div>
                     <a href="myaccounts/notice_form/<?php echo $adfree->id?>"><div class="btn btn-mini btn-info">แก้ไข</div></a>
                     <a href=""><div class="btn btn-mini btn-danger">ลบ</div></a>
                 </td>

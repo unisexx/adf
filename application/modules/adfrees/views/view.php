@@ -1,12 +1,14 @@
 <div class="row">
     <div class="span8">
         <h1><?php echo $adfree->title?></h1>
-        <?php
-            $attach = new Attach();
-            $attach->where("module = 'adfrees' and content_id = ".$adfree->id)->order_by('id','asc')->get(1);
-        ?>
-        <div>
-            <img class="img-polaroid" src="<?php echo $attach->url?>">
+        <div class="wraptocenter"><span></span>
+            <img src="<?php echo $attach->url?>" alt="<?php echo $adfree->title?>"></div>
+        <div class="row thumbrow">
+        <?php foreach($attachs as $attach):?>
+            <div class="span1">
+                <img class="img-polaroid" src="<?php echo $attach->url?>">
+            </div>
+        <?php endforeach;?>
         </div>
         <hr>
         <div>

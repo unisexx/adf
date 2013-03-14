@@ -23,6 +23,13 @@ class Adfrees extends Public_Controller {
     
     function view($id){
         $data['adfree'] = new Adfree($id);
+        
+        $data['attach'] = new Attach();
+        $data['attach']->where("module = 'adfrees' and content_id = ".$id)->order_by('id','asc')->get(1);
+        
+        $data['attachs'] = new Attach();
+        $data['attachs']->where("module = 'adfrees' and content_id = ".$id)->order_by('id','asc')->get();
+            
         $this->template->build('view',$data);
     }
 }
