@@ -31,7 +31,7 @@ class Adfrees extends Public_Controller {
         $data['attachs']->where("module = 'adfrees' and content_id = ".$id)->order_by('id','asc')->get();
         
 		$data['adfrees'] = new Adfree();
-		$data['adfrees']->where('user_id = '.$data['adfree']->user_id)->get();
+		$data['adfrees']->where('user_id = '.$data['adfree']->user_id)->order_by('updated desc')->get(4);
 		
         $this->template->build('view',$data);
     }
