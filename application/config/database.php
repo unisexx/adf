@@ -41,10 +41,6 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-// $db['default']['hostname'] = 'db1.favouritehosting.com';
-// $db['default']['username'] = 'c1newbie12';
-// $db['default']['password'] = 'b!e@2012';
-// $db['default']['database'] = 'c1newbie12';
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
 $db['default']['password'] = '1234';
