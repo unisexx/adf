@@ -25,17 +25,25 @@ border-radius: 4px;
 .loading{display:none;}
 .thumbrow{margin-top:10px;}
 .thumbrow img{cursor: pointer;}
-.thumbrow>:first-child img{background:#ddd;}
+.thumbrow>:first-child{background:#ddd;}
 .wraptocenter {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
     border: 8px solid #d7d7d7;
     background:#fafafa;
-    width: 50%;
+    width: 0.00001%;
     height: 480px;
 }
-.wraptocenter * {
+.wrapthumb {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    background:#fafafa;
+    width: 60px;
+    height: 45px;
+}
+.wraptocenter *,.wrapthumb * {
     vertical-align: middle;
 }
 /*\*//*/

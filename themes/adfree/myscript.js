@@ -13,11 +13,11 @@ $(document).ready(function(){
 		// });
     // }
 	
-	$('.thumbnail').click(function(){
+	$('.wrapthumb').click(function(){
 		$('.loading').show();
-		$(this).css('background','#ddd').closest('.span1').siblings().find('img').css('background','#fff');
+		$(this).css('background','#ddd').siblings().css('background','#fff');
 		$.post('adfrees/getImg', {
-            "id":$(this).prev('input[name=thumbnail_id]').val()
+            "id":$(this).find('input[name=thumbnail_id]').val()
         },function(data){
         	$('.wraptocenter').html(data);
         	$('.loading').hide();
