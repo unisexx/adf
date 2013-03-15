@@ -50,6 +50,7 @@ class Myaccounts extends Public_Controller
 	        	$adfree = new Adfree($id);
 				$_POST['status'] = 'approve';
 				$_POST['slug'] = clean_url($_POST['title']);
+				$_POST['image'] = @$_POST['url'][0];
 				if(!$id)$_POST['user_id'] = $this->session->userdata('id');
 				$adfree->from_array($_POST);
 				$adfree->save();

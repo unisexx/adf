@@ -67,11 +67,12 @@
             <?php foreach($adfrees as $adfree):?>
         	<li class="span3">
 				<div class="thumbnail">
-				<img data-src="holder.js/300x200" alt="300x200" src="http://placehold.it/300x400">
-				<div class="caption">
-				<h6><a href=""><?php echo $adfree->title?></a></h6>
-				<p><?php echo $adfree->detail?></p>
-				</div>
+					<img data-src="holder.js/300x200" alt="300x200" src="http://placehold.it/300x300">
+					<div class="caption">
+						<h6><a href=""><?php echo $adfree->title?></a></h6>
+						<div class="btn btn-mini btn-primary pull-right"><?php echo ($adfree->price)?$adfree->price.' บาท':'ไม่ระบุราคา'; ?></div>
+						<br clear="all">
+					</div>
 				</div>
 			</li>
             <?php endforeach;?>
