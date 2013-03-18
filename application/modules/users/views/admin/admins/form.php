@@ -62,7 +62,10 @@ $(function(){
   <li class="active">ฟอร์ม</li>
 </ul>
 
-<h1>ผู้ดูแล</h1>
+<div class="page-header">
+    <h1>ผู้ดูแล</h1>
+</div>
+
 <form method="post" action="users/admin/administrators/save/<?php echo $user->id?>" id="frm">
 <table class="table">
     <tr>

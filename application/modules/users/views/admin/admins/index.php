@@ -2,8 +2,11 @@
   <li class="active">ผู้ดูแล</li>
 </ul>
 
-<h1>ผู้ดูแล</h1>
-<table class="table table-striped">
+<div class="page-header">
+    <h1>ผู้ดูแล</h1>
+</div>
+
+<table class="table table-hover">
     <thead>
 	<tr>
 		<th>ยูสเซอร์เนม</th>

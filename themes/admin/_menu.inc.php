@@ -6,10 +6,7 @@
 <li><a href="forms/admin/forms/categories">หมวดหมู่สินค้า</a></li>
 <li><a href="forms/admin/forms/wants">ความต้องการ</a></li>
 <li><a href="forms/admin/forms/types">ประเภทสินค้า</a></li>
-<li><a href="#">Link</a></li>
-<li><a href="#">Link</a></li>
-<li><a href="#">Link</a></li>
-<li><a href="#">Link</a></li>
+<li><a href="adfrees/admin/adfrees">ฟรีประกาศ</a></li>
 </ul>
 
     <!-- <?php if(permission('permissions', 'read')):?>
