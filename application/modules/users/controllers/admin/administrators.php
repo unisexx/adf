@@ -17,10 +17,6 @@ class Administrators extends Admin_Controller
 	public function form($id = NULL)
 	{	
 		$data['user'] = new User($id);
-		$data['user_types'] = new User_type();
-		$data['user_types']->order_by('id','asc')->get();
-		//media
-		$this->template->append_metadata('<script type="text/javascript" src="themes/zulex/js/jquery.validate.min.js"></script>');
 		$this->template->build('admin/admins/form',$data);
 	}
 	

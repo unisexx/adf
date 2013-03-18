@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="#">Adfree</a>
+      <a class="brand" href="">Adfree</a>
       <div class="nav-collapse collapse">
         <!-- <ul class="nav">
           <li class="active"><a href="#">Home</a></li>

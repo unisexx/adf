@@ -6,7 +6,7 @@ h1{font-size: 25px !important;}
 h2{font-size: 18px !important;}
 h3{font-size: 16px !important;}
 h4{font-size: 15px !important;}
-label.error{color:red;}
+label.error{color:red; font-style:italic;}
 
 .btn-xlarge {
 width: 100%;
@@ -20,7 +20,9 @@ line-height: normal;
 border-radius: 4px;
 }
 
-/* adfree */
+.middle{vertical-align: middle !important;}
+
+/* adfree */ 
 .loading-blk{height:10px;}
 .loading{display:none;}
 .thumbrow{margin-top:10px;}

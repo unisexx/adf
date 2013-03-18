@@ -5,21 +5,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
 		<title><?php echo $template['title']; ?></title> 
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-		<link rel="stylesheet" href="media/bootstrap/css/bootstrap.min.css" type="text/css">
-		<link rel="stylesheet" href="media/bootstrap/css/bootstrap-responsive.min.css" type="text/css">
-        <link rel="stylesheet" href="media/css/pagination.css" type="text/css">
-		<link rel="stylesheet" href="themes/admin/media/css/stylesheet.css" type="text/css" media="screen" charset="utf-8" />
-		
-		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-        <script type="text/javascript" src="media/bootstrap/js/bootstrap.js"></script>
-        <script type="text/javascript" src="media/js/jquery.validate.min.js"></script>
-		<script type="text/javascript" src="themes/admin/media/js/default.js"></script>
-		<?php echo $template['metadata']; ?>
-		
-		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+		<?php include_once '_css.php'; ?>
+		<?php include_once '_script.php'; ?>
 	</head>
 	<body>
         <?php include_once '_header.inc.php'; ?>

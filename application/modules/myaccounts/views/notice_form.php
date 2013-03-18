@@ -8,6 +8,12 @@
         </div>
     </div>
     <div class="control-group">
+        <label class="control-label" for="name">สภาพสินค้า</label>
+        <div class="controls">
+            <?php echo form_dropdown('adf_type_id',get_option('id','title','adf_types'),$adfree->adf_type_id,'','--- เลือกสภาพสินค้า ---') ?>
+        </div>
+    </div>
+    <div class="control-group">
         <label class="control-label" for="name">หมวดหมู่ประกาศหลัก</label>
         <div class="controls">
             <?php echo form_dropdown('adf_category_id',get_option('id','title','adf_categories'),$adfree->adf_category_id,'','--- เลือกหมวดหมู่ประกาศหลัก ---') ?>

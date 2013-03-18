@@ -90,5 +90,32 @@ class Forms extends Admin_Controller
         }
         redirect($_SERVER['HTTP_REFERER']);
     }
+    
+    function types($id=false){
+        $data['category'] = new Adf_type($id);
+        $data['categories'] = new Adf_type();
+        $data['categories']->order_by('id','desc')->get();
+        $this->template->build('admin/types',$data);
+    }
+    
+    function types_save($id=false){
+        if($_POST){
+            $category = new Adf_type($id);
+            $_POST['status'] = 'approve';
+            $category->from_array($_POST);
+            $category->save();
+            set_notify('success', 'บันทึกข้อมูลเรียบร้อย');
+        }
+        redirect('forms/admin/forms/types');
+    }
+    
+    function types_delete($id=false){
+        if($id){
+            $category = new Adf_type($id);
+            $category->delete();
+            set_notify('success', lang('delete_data_complete'));
+        }
+        redirect($_SERVER['HTTP_REFERER']);
+    }
 }
 ?>

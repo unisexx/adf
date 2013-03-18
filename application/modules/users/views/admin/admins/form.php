@@ -58,11 +58,11 @@ $(function(){
 </script>
 
 <ul class="breadcrumb mywizard">
-  <li><a href="users/admin/administrators/form">Administrator</a></li>
+  <li><a href="users/admin/administrators">ผู้ดูแล</a></li>
   <li class="active">ฟอร์ม</li>
 </ul>
 
-<h1>Administrator</h1>
+<h1>ผู้ดูแล</h1>
 <form method="post" action="users/admin/administrators/save/<?php echo $user->id?>" id="frm">
 <table class="table">
     <tr>
@@ -84,16 +84,6 @@ $(function(){
     <tr>
         <th>ยืนยันรหัสผ่าน :</th>
         <td><?php echo form_password('password_2','','size="30" id="password_2"')?></td>
-    </tr>
-    <tr>
-        <th>กลุ่มผู้ใช้งาน :</th>
-        <td>
-            <select name="user_type_id">
-                <?php foreach($user_types as $user_type):?>
-                <option value="<?php echo $user_type->id?>" <?php echo ($user_type->id == $user->user_type_id)?"selected='selected'":'';?>><?php echo $user_type->name?></option>
-                <?php endforeach;?>
-            </select>
-        </td>
     </tr>
     <tr>
         <th></th>

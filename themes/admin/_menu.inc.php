@@ -1,9 +1,11 @@
 <ul class="nav nav-list bs-docs-sidenav">
 <li class="nav-header">User Management</li>
 <li <?php echo menu_active('users','administrators')?>><a href="users/admin/administrators">ผู้ดูแล</a></li>
+<li <?php echo menu_active('users','users')?>><a href="users/admin/users">สมาชิก</a></li>
 <li class="nav-header">Adfree</li>
 <li><a href="forms/admin/forms/categories">หมวดหมู่สินค้า</a></li>
 <li><a href="forms/admin/forms/wants">ความต้องการ</a></li>
+<li><a href="forms/admin/forms/types">ประเภทสินค้า</a></li>
 <li><a href="#">Link</a></li>
 <li><a href="#">Link</a></li>
 <li><a href="#">Link</a></li>

@@ -16,17 +16,22 @@
       <textarea id="address" class="span5" name="address" rows="3"><?php echo $user->address?></textarea>
     </div>
   </div>
-  <!-- <div class="control-group">
+  <div class="control-group">
     <label class="control-label" for="province">จังหวัด</label>
     <div class="controls">
-      <?php echo form_dropdown('province_id',get_option('id','name','provinces'),'','class="span5"','--- เลือกจังหวัด ---') ?>
+      <?php echo form_dropdown('province_id',get_option('id','name','provinces'),$user->province_id,'class="span5"','--- เลือกจังหวัด ---') ?>
     </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="province" class="span5">อำเภอ</label>
     <div id="amphur" class="controls">
+       <?php
+            if($user->amphur_id){
+                echo form_dropdown('amphur_id',get_option('id','amphur_name','amphures where province_id ='.$user->province_id),$user->amphur_id,'class="span5"','--- เลือกอำเภอ ---');
+            }
+       ?>
     </div>
-  </div> -->
+  </div>
   <div class="control-group">
     <label class="control-label" for="phone">เบอร์โทรศัพท์</label>
     <div class="controls">

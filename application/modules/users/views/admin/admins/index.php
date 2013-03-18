@@ -1,8 +1,8 @@
 <ul class="breadcrumb mywizard">
-  <li class="active">Administrator</li>
+  <li class="active">ผู้ดูแล</li>
 </ul>
 
-<h1>Administrator</h1>
+<h1>ผู้ดูแล</h1>
 <table class="table table-striped">
     <thead>
 	<tr>
