@@ -1,5 +1,12 @@
 <div class="row">
     <div class="span8">
+        <ul class="breadcrumb">
+            <li><a href="home">หน้าแรก</a> <span class="divider">/</span></li>
+            <li><a href="#"><?php echo $adfree->adf_category->title?></a> <span class="divider">/</span></li>
+            <li><a href="#"><?php echo $adfree->adf_sub_category->title?></a> <span class="divider">/</span></li>
+            <li class="active"><?php echo $adfree->title?></li>
+        </ul>
+
         <h1><?php echo $adfree->title?></h1>
         <div class="loading-blk"><img class="loading" src="media/images/ajax-loader.gif"></div>
         <div class="wraptocenter"><span></span>
