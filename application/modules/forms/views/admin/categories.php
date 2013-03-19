@@ -7,7 +7,10 @@
 </div>
 
 <form method="post" action="forms/admin/forms/categories_save/<?=$category->id?>" class="well form-inline">
-	<input type="text" name="title" value="<?=$category->title?>" placeholder="หมวดหมู่">
+	<input class="input" type="text" name="title" value="<?=$category->title?>" placeholder="หมวดหมู่">
+	<div class="input-append">
+	<input class="input input-xlarge" type="text" name="image" placeholder="ไอค่อนหมวดหมู่" value="<?php echo $category->image?>"/><input class="btn" type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'image')" />
+	</div>
 	<input type="submit" class="btn" value="บันทึก">
 </form>
 
@@ -15,6 +18,7 @@
     <thead>
 	<tr>
 		<th>#</th>
+		<th>ไอค่อน</th>
 		<th>ชื่อหมวดหมู่</th>
 		<th>จำนวนหมวดหมู่ย่อย</th>
 		<th></th>
@@ -24,6 +28,7 @@
 	<?php foreach($categories as $key=>$row):?>
     	<tr>
     		<td><?=$key+1?></td>
+    		<td><img src="<?=$row->image?>"></td>
 	        <td><?=$row->title?></td>
 	        <td><?=$row->adf_sub_category->result_count()?></td>
 	        <td>

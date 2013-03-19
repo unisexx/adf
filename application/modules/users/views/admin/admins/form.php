@@ -1,62 +1,3 @@
-<script language="javascript">
-$(function(){
-    $("#frm").validate({
-    rules: 
-    {
-        username: 
-        { 
-            required: true
-        },
-        display: 
-        { 
-            required: true
-        },
-        email: 
-        { 
-            required: true,
-            email: true
-            //remote: "users/check_email"
-        },
-        password: 
-        {
-            required: true,
-            minlength: 4
-        },
-        password_2:
-        {
-            equalTo: "#password"
-        }
-    },
-    messages:
-    {
-        username: 
-        { 
-            required: "กรุณากรอกชื่อล็อกอิน"
-        },
-        display: 
-        { 
-            required: "กรุณากรอกชื่อ นามสกุล"
-        },
-        email: 
-        { 
-            required: "กรุณากรอกอีเมล์",
-            email: "กรุณากรอกอีเมล์ให้ถูกต้อง"
-            //remote: "อีเมล์นี้ไม่สามารถใช้งานได้"
-        },
-        password: 
-        {
-            required: "กรุณากรอกรหัสผ่าน",
-            minlength: "กรุณากรอกรหัสผ่านอย่างน้อย 4 ตัวอักษร"
-        },
-        password_2:
-        {
-            equalTo: "กรุณากรอกรหัสผ่านให้ตรงกันทั้ง 2 ช่อง"
-        }
-    }
-    });
-});
-</script>
-
 <ul class="breadcrumb mywizard">
   <li><a href="users/admin/administrators">ผู้ดูแล</a></li>
   <li class="active">ฟอร์ม</li>
@@ -87,6 +28,13 @@ $(function(){
     <tr>
         <th>ยืนยันรหัสผ่าน :</th>
         <td><?php echo form_password('password_2','','size="30" id="password_2"')?></td>
+    </tr>
+    <tr>
+        <th>รหัสลับ</th>
+        <td>
+            <img src="users/captcha" /><Br>
+            <input type="text" name="captcha" class="input-small" id="inputCaptcha" placeholder="รหัสลับ">
+        </td>
     </tr>
     <tr>
         <th></th>

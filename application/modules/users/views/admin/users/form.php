@@ -7,7 +7,13 @@
     <h1>สมาชิก</h1>
 </div>
 
-<form class="form-horizontal" method="post" action="myaccounts/profile_save">
+<form class="form-horizontal" method="post" action="users/admin/users/save/<?php echo $user->id?>">
+  <div class="control-group">
+    <label class="control-label" for="username">ยูสเซอร์เนม</label>
+    <div class="controls">
+      <input id="username" class="span5" type="text" name="username" value="<?php echo $user->username?>">
+    </div>
+  </div>
   <div class="control-group">
     <label class="control-label" for="name">ชื่อ - นามสกุล</label>
     <div class="controls">

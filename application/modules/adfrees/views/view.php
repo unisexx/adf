@@ -2,8 +2,8 @@
     <div class="span8">
         <ul class="breadcrumb">
             <li><a href="home">หน้าแรก</a> <span class="divider">/</span></li>
-            <li><a href="#"><?php echo $adfree->adf_category->title?></a> <span class="divider">/</span></li>
-            <li><a href="#"><?php echo $adfree->adf_sub_category->title?></a> <span class="divider">/</span></li>
+            <li><a href="adfrees?adf_category_id=<?php echo $adfree->adf_category_id?>"><?php echo $adfree->adf_category->title?></a> <span class="divider">/</span></li>
+            <li><a href="adfrees?adf_sub_category_id=<?php echo $adfree->adf_sub_category_id?>"><?php echo $adfree->adf_sub_category->title?></a> <span class="divider">/</span></li>
             <li class="active"><?php echo $adfree->title?></li>
         </ul>
 

@@ -23,19 +23,18 @@ class Users extends Admin_Controller
 	
 	public function save($id = NULL)
 	{
-		if($_POST)
-		{
-			$user = new User($id);
-			$user->from_array($_POST);
-			if(isset($_POST['know'])){
-				$user->know = implode(',',$_POST['know']);
-			}
-			if(isset($_POST['buyproduct'])){
-				$user->buyproduct = implode(',',$_POST['buyproduct']);
-			}
-			$user->save();
-			set_notify('success', lang('save_data_complete'));	
-		}
+		if($_POST){
+            $captcha = $this->session->userdata('captcha');
+            if(($_POST['captcha'] == $captcha) && !empty($captcha)){
+                $user = new User($id);
+                $user->from_array($_POST);
+                $user->save();
+                set_notify('success', lang('save_data_complete'));
+            }else{
+                set_notify('error','ขออภัยค่ะ!! คุณกรอกรหัสไม่ถูกต้อง');
+                redirect($_SERVER['HTTP_REFERER']);
+            }
+        }
 		redirect('users/admin/users');
 	}
 	

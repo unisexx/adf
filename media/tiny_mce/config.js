@@ -29,7 +29,7 @@ function tiny(elements){
 }
 function openKCFinder(field_name, url, type, win) {
     tinyMCE.activeEditor.windowManager.open({
-        file: '/healthypreschool/media/kcfinder/browse.php?opener=tinymce&type=' + type+ '&dir=' + type + '/public',
+        file: '/adf/media/kcfinder/browse.php?opener=tinymce&type=' + type+ '&dir=' + type + '/public',
         title: 'File Manager',
         width: 700,
         height: 500,
@@ -52,7 +52,7 @@ function browser(element,type) {
 			element.val(path[0]);
         }
     };
-    window.open('/healthypreschool/media/kcfinder/browse.php?type='+type+'&dir='+type+'/public',
+    window.open('/adf/media/kcfinder/browse.php?type='+type+'&dir='+type+'/public',
         'kcfinder_image', 'status=0, toolbar=0, location=0, menubar=0, ' +
         'directories=0, resizable=1, scrollbars=0, width=800, height=600'
     );
