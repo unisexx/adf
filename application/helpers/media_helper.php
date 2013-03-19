@@ -146,7 +146,7 @@ if(!function_exists('js_checkbox'))
 					}
 
 	
-					$.post("'.$CI->router->fetch_module().'/admin/'.$CI->router->fetch_class().'/approve/"+type+ + this.value,jsonOptions,function(data){
+					$.post("'.$CI->router->fetch_module().'/admin/'.$CI->router->fetch_class().'/'.$CI->router->fetch_method().'_approve/"+type+ + this.value,jsonOptions,function(data){
 						target.html(data);
 					}); 
 

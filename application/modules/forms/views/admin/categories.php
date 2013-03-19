@@ -17,6 +17,7 @@
 <table class="table table-hover">
     <thead>
 	<tr>
+	    <th>สถานะ</th>
 		<th>#</th>
 		<th>ไอค่อน</th>
 		<th>ชื่อหมวดหมู่</th>
@@ -27,6 +28,7 @@
 	<tbody>
 	<?php foreach($categories as $key=>$row):?>
     	<tr>
+    	    <td><input type="checkbox" name="status" value="<?php echo $row->id ?>" <?php echo ($row->status=="approve")?'checked="checked"':'' ?> <?php echo (@$_POST['status']=="approve")?'':'' ?> /></td>
     		<td><?=$key+1?></td>
     		<td><img src="<?=$row->image?>"></td>
 	        <td><?=$row->title?></td>

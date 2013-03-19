@@ -117,5 +117,45 @@ class Forms extends Admin_Controller
         }
         redirect($_SERVER['HTTP_REFERER']);
     }
+    
+    function categories_approve($id)
+    {
+        if($_POST)
+        {
+            $new = new Adf_category($id);
+            $new->from_array($_POST);
+            $new->save();
+        }
+    }
+    
+    function types_approve($id)
+    {
+        if($_POST)
+        {
+            $new = new Adf_type($id);
+            $new->from_array($_POST);
+            $new->save();
+        }
+    }
+    
+    function sub_categories_approve($id)
+    {
+        if($_POST)
+        {
+            $new = new Adf_sub_category($id);
+            $new->from_array($_POST);
+            $new->save();
+        }
+    }
+    
+    function wants_approve($id)
+    {
+        if($_POST)
+        {
+            $new = new Adf_want($id);
+            $new->from_array($_POST);
+            $new->save();
+        }
+    }
 }
 ?>

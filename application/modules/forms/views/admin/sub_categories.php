@@ -16,6 +16,7 @@
 <table class="table table-hover">
     <thead>
 	<tr>
+	    <th>สถานะ</th>
 		<th>#</th>
 		<th>ชื่อหมวดหมู่ย่อย</th>
 		<th></th>
@@ -24,6 +25,7 @@
 	<tbody>
 	<?php foreach($category->adf_sub_category->get() as $key=>$row):?>
     	<tr>
+    	    <td><input type="checkbox" name="status" value="<?php echo $row->id ?>" <?php echo ($row->status=="approve")?'checked="checked"':'' ?> <?php echo (@$_POST['status']=="approve")?'':'' ?> /></td>
     		<td><?=$key+1?></td>
 	        <td><?=$row->title?></td>
 	        <td>
