@@ -12,6 +12,12 @@ class Adfrees extends Public_Controller {
         $this->load->view('inc_home',$data);
     }
     
+    function inc_home_category(){
+        $data['adf_categories'] = new Adf_category();
+        $data['adf_categories']->get();
+        $this->load->view('inc_home_category',$data);
+    }
+    
     function index(){
         $data['adfrees'] = new Adfree();
         if(@$_GET['title'])$data['adfrees']->where("title like '%".$_GET['title']."%'");
