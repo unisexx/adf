@@ -79,13 +79,31 @@
                         <li><a href="post_right_sidebar.html">Post right sidebar</a></li>
                     </ul>
                     </li>
-                    <li class="inverse">
-                    <a href="contact.html"><i class="icon-envelope icon-white"></i> Contact</a>
+                    <li class="dropdown inverse">
+                    <a href="#"><i class="icon-user icon-white"></i> สมาชิก</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="blog_left_sidebar.html">ล็อกอิน</a></li>
+                        <li><a href="blog_right_sidebar.html">สมัครสมาชิก</a></li>
+                    </ul>
                     </li>
                 </ul>
                 </nav>
             </div>
             <!-- end menu -->
+            <?php if(is_login()):?>
+                <ul class="nav pull-right">
+                <li><?php //echo thumb(avatar(user_login()->id),20,20,1,"style='margin-top:10px;'")?></li>
+                <li><a rel="tooltip" data-placement="bottom" href="myaccounts/profile" data-original-title="แก้ไขข้อมูล"><?php echo user_login()->username ?></a></li>
+                <li><a href="users/logout" rel="tooltip" data-placement="bottom" data-original-title="ออกจากระบบ">logout</a></li>
+                </ul>
+            <?php else:?>
+                <form class="navbar-form pull-right" method="post" action="users/login">
+                  <input class="span2" type="text" name="username" placeholder="Username">
+                  <input class="span2" type="password" name="password" placeholder="Password">
+                  <button type="submit" class="btn">ล็อกอิน</button>
+                  <a href="users/register"><div class="btn">สมัครสมาชิก</div></a>
+                </form>
+            <?php endif;?>
         </div>
     </div>
 </div>
