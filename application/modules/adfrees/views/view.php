@@ -80,6 +80,7 @@
             <ul class="thumbnails">
             <?php foreach($adfrees as $adfree):?>
         	<li class="span3">
+        	    <a href="adfrees/view/<?php echo $adfree->id?>">
 				<div class="thumbnail">
 				    <?php if($adfree->image):?>
 				        <img src="<?php echo $adfree->image?>">
@@ -87,15 +88,16 @@
 				        <img data-src="holder.js/300x200" alt="300x200" src="http://placehold.it/300x300">
 				    <?php endif;?>
 					<div class="caption">
-						<h6><a href="adfrees/view/<?php echo $adfree->id?>"><?php echo $adfree->title?></a></h6>
-						<a href="adfrees/view/<?php echo $adfree->id?>" class="btn btn-mini btn-primary pull-right"><?php echo ($adfree->price)?$adfree->price.' บาท':'ไม่ระบุราคา'; ?></a>
+						<h6><?php echo $adfree->title?></h6>
+						<div class="btn btn-mini btn-primary pull-right"><?php echo ($adfree->price)?$adfree->price.' บาท':'ไม่ระบุราคา'; ?></div>
 						<br clear="all">
 					</div>
 				</div>
+				</a>
 			</li>
             <?php endforeach;?>
 			</ul>
-			<a href="" class="pull-right btn btn-small btn-success">ดูสินค้าอื่นๆของ <?php echo $adfree->user->username?></a>
+			<a href="adfrees/member/<?php echo $adfree->user_id?>" class="pull-right btn btn-small btn-success">ดูสินค้าอื่นๆของ <?php echo $adfree->user->username?></a>
 		</div>
 		
 	</div>

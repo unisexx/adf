@@ -11,7 +11,7 @@
         <?php foreach($adfrees as $key=>$adfree):?>
             <tr>
                 <td class="middle">
-                    <div><?php echo mysql_to_th($adfree->created)?></div>
+                    <div><?php echo mysql_to_th($adfree->updated)?></div>
                 </td>
                 <td>
                     <a href="adfrees/view/<?php echo $adfree->id?>">

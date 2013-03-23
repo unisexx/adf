@@ -1,6 +1,6 @@
 <?php include("_tabmenu.php")?>
 
-<form id="notice" class="form-horizontal" method="post" action="myaccounts/notice_save/<?php echo $adfree->id?>">
+<form id="notice" class="form-horizontal" method="post" action="myaccounts/adfree_save/<?php echo $adfree->id?>">
     <div class="control-group">
         <label class="control-label" for="name">ความต้องการ</label>
         <div class="controls">

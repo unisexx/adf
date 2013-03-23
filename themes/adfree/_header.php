@@ -79,31 +79,30 @@
                         <li><a href="post_right_sidebar.html">Post right sidebar</a></li>
                     </ul>
                     </li>
-                    <li class="dropdown inverse">
-                    <a href="#"><i class="icon-user icon-white"></i> สมาชิก</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="blog_left_sidebar.html">ล็อกอิน</a></li>
-                        <li><a href="blog_right_sidebar.html">สมัครสมาชิก</a></li>
-                    </ul>
-                    </li>
+                    <?php if(is_login()):?>
+                        <li class="dropdown inverse">
+                        <a href="#"><i class="icon-user icon-white"></i> <?php echo user_login()->username ?></a>
+                        <ul class="dropdown-menu">
+                            <li><a href='myaccounts/profile'>แก้ไขข้อมูล</a></li>
+                            <li><a href="users/logout">ล็อกเอาท์</a></li>
+                            <?php if(user_login()->level_id == '1'):?>
+                                <li><a href="admin" target="_blank">จัดการหลังบ้าน</a></li>
+                            <?php endif;?>
+                        </ul>
+                        </li>
+                    <?php else:?>
+                        <li class="dropdown inverse">
+                        <a href="#"><i class="icon-user icon-white"></i> สมาชิก</a>
+                        <ul class="dropdown-menu">
+                            <li><a data-toggle="modal" href='#signin'>ล็อกอิน</a></li>
+                            <li><a href="users/register">สมัครสมาชิก</a></li>
+                        </ul>
+                        </li>
+                    <?php endif;?>
                 </ul>
                 </nav>
             </div>
             <!-- end menu -->
-            <?php if(is_login()):?>
-                <ul class="nav pull-right">
-                <li><?php //echo thumb(avatar(user_login()->id),20,20,1,"style='margin-top:10px;'")?></li>
-                <li><a rel="tooltip" data-placement="bottom" href="myaccounts/profile" data-original-title="แก้ไขข้อมูล"><?php echo user_login()->username ?></a></li>
-                <li><a href="users/logout" rel="tooltip" data-placement="bottom" data-original-title="ออกจากระบบ">logout</a></li>
-                </ul>
-            <?php else:?>
-                <form class="navbar-form pull-right" method="post" action="users/login">
-                  <input class="span2" type="text" name="username" placeholder="Username">
-                  <input class="span2" type="password" name="password" placeholder="Password">
-                  <button type="submit" class="btn">ล็อกอิน</button>
-                  <a href="users/register"><div class="btn">สมัครสมาชิก</div></a>
-                </form>
-            <?php endif;?>
         </div>
     </div>
 </div>

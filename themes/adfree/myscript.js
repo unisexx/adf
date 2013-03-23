@@ -12,6 +12,23 @@ $(document).ready(function(){
 			// maxTags: 5
 		// });
     // }
+	$('a[href="#"]').click(function(){
+		return false;
+	});
+	
+	$(window).scroll(function() {
+    if($(this).scrollTop() != 0) {
+            //$('#toTop').fadeIn();
+            $('#footer-back-to-top').removeClass('offscreen');
+        } else {
+            //$('#toTop').fadeOut();
+            $('#footer-back-to-top').addClass('offscreen');
+        }
+    });
+    
+    $('#footer-back-to-top').click(function() {
+        $('body,html').animate({scrollTop:0},800);
+    }); 
 	
 	$('.wrapthumb').click(function(){
 		$('.loading').show();

@@ -27,23 +27,27 @@ class Myaccounts extends Public_Controller
         redirect('myaccounts/profile');
     }
     
-    function notice(){
+    function adfree(){
         $data['adfrees'] = new Adfree();
-        $data['adfrees']->where('user_id = '.user_login()->id)->get_page();
-        $this->template->build('notice',$data);
+        if(@$_GET['title'])$data['adfrees']->where("title like '%".$_GET['title']."%'");
+        if(@$_GET['adf_category_id'])$data['adfrees']->where('adf_category_id',$_GET['adf_category_id']);
+        if(@$_GET['adf_sub_category_id'])$data['adfrees']->where("adf_sub_category_id = ".$_GET['adf_sub_category_id']);
+        if(@$_GET['province_id'])$data['adfrees']->where_related('users', 'province_id', $_GET['province_id']);
+        $data['adfrees']->where('user_id = '.user_login()->id)->order_by('updated','desc')->get_page();
+        $this->template->build('adfree',$data);
     }
     
-    function notice_form($id=false){
+    function adfree_form($id=false){
         $data['adfree'] = new Adfree($id);
         // ไฟล์แนบ
         if($id){
             $data['attachs'] = new Attach();
             $data['attachs']->where("module = 'adfrees' and content_id = ".$id)->order_by('id','asc')->get();
         }
-        $this->template->build('notice_form',$data);
+        $this->template->build('adfree_form',$data);
     }
     
-    function notice_save($id=false){
+    function adfree_save($id=false){
         if($_POST){
         	$captcha = $this->session->userdata('captcha');
 			if(($_POST['captcha'] == $captcha) && !empty($captcha)){
@@ -81,17 +85,17 @@ class Myaccounts extends Public_Controller
 				set_notify('error','ขออภัยค่ะ!! คุณกรอกรหัสไม่ถูกต้อง');
 				redirect($_SERVER['HTTP_REFERER']);
 			}
-			redirect('myaccounts/notice');
+			redirect('myaccounts/adfree');
         }
     }
     
-    function notice_delete($id){
+    function adfree_delete($id){
         if($id){
             $adfree = new Adfree($id);
             $adfree->delete();
             set_notify('success','ลบข้อมูลเรียบร้อย');
         }
-        redirect('myaccounts/notice');
+        redirect('myaccounts/adfree');
     }
     
     function delete_uppic(){
