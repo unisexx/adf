@@ -5,13 +5,17 @@
 
 <div class="row">
     <div class="span4">
-        <ul class="nav nav-list well">
-            <li><a href="#global"><i class="icon-chevron-right"></i> Global styles</a></li>
-            <li><a href="#gridSystem"><i class="icon-chevron-right"></i> Grid system</a></li>
-            <li><a href="#fluidGridSystem"><i class="icon-chevron-right"></i> Fluid grid system</a></li>
-            <li><a href="#layouts"><i class="icon-chevron-right"></i> Layouts</a></li>
-            <li><a href="#responsive"><i class="icon-chevron-right"></i> Responsive design</a></li>
-        </ul>
+        <table class="table table-bordered table-hover">
+            <tr><td><a href="adfrees/member/<?php echo $adfrees->user_id?>"><i class="icon-chevron-right"></i> ประกาศทั้งหมด (<?php echo $allcount->result_count();?>)</a></td></tr>
+            <?php foreach($sub_categories as $sub_category):?>
+                <?php $count = new Adfree();?>
+                <tr>
+                    <td>
+                        <a href="adfrees/member/<?php echo $adfrees->user_id?>/<?php echo $sub_category->adf_sub_category_id?>"><i class="icon-chevron-right"></i> <?php echo $sub_category->adf_sub_category->title?> (<?php echo $count->where("adf_sub_category_id",$sub_category->adf_sub_category_id)->get()->result_count();?>)</a>
+                    </td>
+                </tr>
+            <?php endforeach;?>
+        </table>
     </div>
     <div class="span8">
         <ul class="thumbnails">

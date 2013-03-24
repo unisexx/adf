@@ -12,7 +12,7 @@ $(document).ready(function(){
 			// maxTags: 5
 		// });
     // }
-	$('a[href="#"]').click(function(){
+	$('.navbar-fixed-top a[href="#"]').click(function(){
 		return false;
 	});
 	

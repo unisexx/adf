@@ -54,9 +54,17 @@ class Adfrees extends Public_Controller {
         }
     }
 
-    function member($id){
+    function member($id,$adf_sub_category_id=false){
+        $data['allcount'] = new Adfree();
+        $data['allcount']->where('user_id = '.$id)->get();
+        
         $data['adfrees'] = new Adfree();
-        $data['adfrees']->where('user_id = '.$id)->order_by('updated desc')->get_page();
+        $data['adfrees']->where('user_id = '.$id);
+        if(@$adf_sub_category_id)$data['adfrees']->where('adf_sub_category_id',$adf_sub_category_id);
+        $data['adfrees']->order_by('updated desc')->get_page();
+        
+        $data['sub_categories'] = new Adfree();
+        $data['sub_categories']->where('user_id = '.$id)->group_by('adf_sub_category_id')->order_by('updated desc')->get();
         $this->template->build('member',$data);
     }
 }

@@ -15,11 +15,7 @@
                 <nav>
                 <ul class="nav topnav">
                     <li class="dropdown success">
-                    <a href="index.html"><i class="icon-home icon-white"></i> Home</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="index_alt1.html">Index alt 1</a></li>
-                        <li><a href="index_alt2.html">Index alt 2</a></li>
-                    </ul>
+                        <a href=""><i class="icon-home icon-white"></i> Home</a>
                     </li>
                     <li class="dropdown primary">
                     <a href="#"><i class="icon-star icon-white"></i> Features</a>

@@ -40,7 +40,7 @@
     </div>
     <div class="modal-footer">
         <button type="submit" id="login" class="btn btn-primary">เข้าสู่ระบบ</button>
-        <a href="#" class="btn" data-dismiss="modal">ปิด</a>
+        <a class="btn" data-dismiss="modal">ปิด</a>
     </div>
     </form>
 </div>
