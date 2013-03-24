@@ -15,9 +15,7 @@
                 <div class="row">
                     <div class="span8">
                         <h3><i class="m-icon-big-swapright m-icon-white"></i> ฟรีประกาศ</h3>
-                        <p>
-                            Overview of the template, its contents, and how to get started with scaffold template.
-                        </p>
+                        <p>เพียงสมัครสมาชิก คุณก็จะสามารถจัดการประกาศทั้งหมดของคุณได้อย่างง่ายดาย</p>
                     </div>
                     <div class="span4">
                         <div class="input-append">
@@ -33,8 +31,8 @@
     </section>
 	<div class="container">
       <?php echo $template['body'] ?>
-      <?php include "_footer.php";?>
 	</div>
+	<?php include "_footer.php";?>
 <?php include "_script.php";?>
 </body>
 </html>

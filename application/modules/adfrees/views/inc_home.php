@@ -1,4 +1,6 @@
-<form class="form-inline well" method="get" action="adfrees">
+<h3 class="heading-success"><span class="btn btn-large btn-success"><i class="m-icon-big-swapright m-icon-white"></i></span>&nbsp;&nbsp;ประกาศล่าสุด</h3>
+
+<form class="form-inline well well-success box" method="get" action="adfrees">
   <?php echo form_dropdown('adf_want_id',get_option('id','title','adf_wants'),@$_GET['adf_want_id'],'','--- ความต้องการ ---') ?>
    <?php echo form_dropdown('adf_category_id',get_option('id','title','adf_categories'),@$_GET['adf_category_id'],'','--- หมวดหมู่ประกาศหลัก ---') ?>
    <?php echo form_dropdown('adf_sub_category_id',get_option('id','title','adf_sub_categories'),@$_GET['adf_sub_category_id'],'','--- หมวดหมู่ประกาศย่อย ---') ?>
@@ -41,4 +43,9 @@
         <?php endforeach;?>
     </tbody>
 </table>
-<br clear="all">
+<div class="row">
+    <div class="span12">
+        <div class="divider">
+        </div>
+    </div>
+</div>

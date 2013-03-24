@@ -494,7 +494,7 @@ input.search-query {
   line-height: 14px;
   
   vertical-align: top;
-  background-image: url(../image/syncfusion-icons.png);
+  background-image: url(../adfree/image/syncfusion-icons.png);
   background-position: 0 0;
   background-repeat: no-repeat; 
   
@@ -2349,9 +2349,11 @@ header .navbar .brand.logo {
   padding: 0;
   margin-left:0;
   margin-top:20px;
+  margin-bottom:20px;
+  width:200px;
 }
 
-
+.head-member{margin-top:20px;}
 
 /* -- top menu -- */
 header .navbar-inverse .brand,

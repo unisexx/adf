@@ -8,9 +8,21 @@
 
 <form method="post" action="forms/admin/forms/categories_save/<?=$category->id?>" class="well form-inline">
 	<input class="input" type="text" name="title" value="<?=$category->title?>" placeholder="หมวดหมู่">
+	
 	<div class="input-append">
 	<input class="input input-xlarge" type="text" name="image" placeholder="ไอค่อนหมวดหมู่" value="<?php echo $category->image?>"/><input class="btn" type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'image')" />
 	</div>
+	
+	<div class="input-append">
+      <input class="input-medium" id="iconInput" type="text" name="icon">
+      <div class="btn-group">
+        <button class="btn dropdown-toggle" data-toggle="dropdown">เลือก<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li class="select-icon"><a><i class="icon-camera-retro"></i> กล้องและอุปกรณ์</a></li>
+        </ul>
+      </div>
+    </div>
+
 	<input type="submit" class="btn" value="บันทึก">
 </form>
 

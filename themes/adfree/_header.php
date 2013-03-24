@@ -7,15 +7,41 @@
             <!-- logo -->
             <a class="brand logo" href="home">
             <!-- <img src="assets/img/logo.png" alt=""> -->
-            <h1>Adfree</h1>
+                <i class="icon-bullhorn icon-2x pull-left"></i>
+                <strong>Adfree</strong><br>ซื้อง่าย ขายคล่อง
             </a>
+            <div class="head-member">
+            <?php if(is_login()):?>
+                <div class="btn-group pull-right">
+                  <a class="btn dropdown-toggle" data-toggle="dropdown">
+                    <?php //echo thumb(avatar(user_login()->id),20,20,1,"")?> <?php echo user_login()->username ?>
+                    <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <!-- dropdown menu links -->
+                    <li><a href="myaccounts/profile">แก้ไขข้อมูล</a></li>
+                    <li><a href="users/logout">ออกจากระบบ</a></li>
+                    <?php if(user_login()->level_id == '1'):?>
+                        <li><a href="admin" target="_blank">จัดการหลังบ้าน</a></li>
+                    <?php endif;?>
+                  </ul>
+                </div>
+            <?php else:?>
+                <form class="navbar-form pull-right" method="post" action="users/login">
+                  <input class="span2" type="text" name="username" placeholder="Username">
+                  <input class="span2" type="password" name="password" placeholder="Password">
+                  <button type="submit" class="btn">ล็อกอิน</button>
+                </form>
+            <?php endif;?>
+            </div>
+            
             <!-- end logo -->
             <!-- top menu -->
-            <div>
+            <!-- <div>
                 <nav>
                 <ul class="nav topnav">
                     <li class="dropdown success">
-                        <a href=""><i class="icon-home icon-white"></i> Home</a>
+                        <a href=""><i class="icon-home icon-white"></i> หน้าแรก</a>
                     </li>
                     <li class="dropdown primary">
                     <a href="#"><i class="icon-star icon-white"></i> Features</a>
@@ -97,7 +123,7 @@
                     <?php endif;?>
                 </ul>
                 </nav>
-            </div>
+            </div> -->
             <!-- end menu -->
         </div>
     </div>

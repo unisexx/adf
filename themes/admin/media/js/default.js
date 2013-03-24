@@ -15,6 +15,11 @@ $(document).ready(function(){
             });
     });
     
+    $('li.select-icon').click(function(){
+    	var icon = $(this).find('i').attr('class');
+    	$('#iconInput').val(icon);
+    });
+    
     $("form").validate({
     rules: 
     {
