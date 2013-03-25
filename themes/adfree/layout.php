@@ -33,6 +33,6 @@
       <?php echo $template['body'] ?>
 	</div>
 	<?php include "_footer.php";?>
-<?php include "_script.php";?>
+    <?php include "_script.php";?>
 </body>
 </html>
