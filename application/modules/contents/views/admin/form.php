@@ -39,13 +39,13 @@ $(document).ready(function(){
 <form id="frmMain" action="contents/admin/contents/save/<?=$type?>/<?php echo $content->id ?>" method="post" enctype="multipart/form-data" >
 	
 <table class="form">
-	<tr>
+	<!-- <tr>
 		<th></th>
 		<td>
 			<?php if($content->image != ""):?><?php echo thumb("uploads/content/".$content->image,115,77,1);?><?php endif;?>
 		</td>
 	</tr>
-	<tr><th>รูปภาพ :</th><td><input type="file" name="image" /></td></tr>
+	<tr><th>รูปภาพ :</th><td><input type="file" name="image" /></td></tr> -->
 	<?php if($type == 'articles'):?>
 	<tr><th>หมวดหมู่ :</th><td><?php echo form_dropdown('category_id',get_option('id','name','categories where module="'.$type.'" and parents <> 0'),$content->category_id,'');?></td></tr>
 	<!-- get_option('id','name','categories where module="'.$type.'" and parents <> 0') -->

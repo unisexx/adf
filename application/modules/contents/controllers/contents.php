@@ -53,10 +53,12 @@ class Contents extends Public_Controller
 	}
 	
 	function view($type,$id){
+	    $data['categories'] = new Category();
+        $data['categories']->where('module = "articles" and parents <> 0')->order_by('orderlist','asc')->get();
+	    
 		$data['content'] = new Content($id);
 		$data['type'] = $data['content']->module;
 		$data['type_name'] = $this->array[$data['content']->module];
-		$data['header_img'] = $this->header_img[$data['content']->module];
 		if($type == 'histories'){
 			$this->template->build('view_onepage',$data);
 		}elseif($type == 'vdos'){
