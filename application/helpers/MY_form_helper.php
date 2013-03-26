@@ -128,7 +128,7 @@ function form_referer($name = 'referer')
 
 function form_back($name = 'back')
 {
-	return form_button($name,'ย้อนกลับ','onclick="window.location = \''.$_SERVER['HTTP_REFERER'].'\'"');
+	return form_button($name,'ย้อนกลับ','class="btn" onclick="window.location = \''.$_SERVER['HTTP_REFERER'].'\'"');
 }
 
 function form_icon($name, $type, $selected = FALSE)

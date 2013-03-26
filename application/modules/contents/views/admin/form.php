@@ -26,7 +26,15 @@ $(document).ready(function(){
     });
 });
 </script>
-<h1><?=$type_name?></h1>
+
+<ul class="breadcrumb">
+  <li class="active">ข่าวสาร</li>
+</ul>
+
+<div class="page-header">
+	<h1><?=$type_name?></h1>
+</div>
+
 <form id="frmMain" action="contents/admin/contents/save/<?=$type?>/<?php echo $content->id ?>" method="post" enctype="multipart/form-data" >
 	
 <table class="form">
@@ -43,7 +51,7 @@ $(document).ready(function(){
 	<tr>
 		<th>หัวข้อ :</th>
 		<td>
-			<input type="text" name="title" rel="th" value="<?php echo lang_decode($content->title,'th')?>" class="full" />
+			<input type="text" name="title" rel="th" value="<?php echo lang_decode($content->title,'th')?>" class="input-xxlarge" />
 		</td>
 	</tr>
 	<tr>
@@ -76,7 +84,7 @@ $(document).ready(function(){
 		    <input type="text" name="file[]" value=""/><input type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'files')" />
 		</td>
 	</tr> -->
-	<tr><th></th><td><input type="submit" value="บันทึก" /><?php echo form_back() ?></td></tr>
+	<tr><th></th><td><input class="btn" type="submit" value="บันทึก" /> <?php echo form_back() ?></td></tr>
 </table>
 <?php echo form_referer() ?>
 </form>

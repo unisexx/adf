@@ -1,7 +1,7 @@
 <?php
 class Contents extends Admin_Controller
 {
-	public $array = array('informations'=>'ข่าวประชาสัมพันธ์','articles'=>'บทความน่าสนใจ','vdos'=>'vdo แนะนำ','downloads'=>'เอกสารดาวน์โหลด','histories'=>'ความเป็นมาศูนย์เด็กเล็กปลอดโรค');
+	public $array = array('pages'=>'ข่าวสาร');
 	
 	function __construct()
 	{
