@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="home">Adfree</a>
+      <a class="brand" href="home" target="_blank">Adfree</a>
       <div class="nav-collapse collapse">
         <p class="navbar-text pull-right">
           Logged in as <?php echo user()->username ?> | <a href="users/admin/auth/logout" onclick="return confirm('Do you want to logout?')" >Logout</a>

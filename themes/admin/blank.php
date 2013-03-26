@@ -4,12 +4,8 @@
 		<base href="<?php echo base_url(); ?>" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
 		<title><?php echo $template['title']; ?></title>
-		<link rel="stylesheet" href="media/bootstrap/css/bootstrap.min.css" type="text/css">
-		<link rel="stylesheet" href="media/bootstrap/css/bootstrap-responsive.min.css" type="text/css">
-		
-		<script src="media/js/jquery-1.4.2.min.js" type="text/javascript"></script>
-		<script type="text/javascript" src="media/js/jquery.corner.js"></script>
-		<script type="text/javascript" src="themes/admin/media/js/default.js"></script>
+		<?php include_once '_css.php'; ?>
+        <?php include_once '_script.php'; ?>
 		<style type="text/css">
 	      body {
 	        padding-top: 40px;
@@ -42,7 +38,6 @@
 	        padding: 7px 9px;
 	      }
 	    </style>
-		<?php echo $template['metadata']; ?>
 	</head>
 	<body>
 		<div id="header">&nbsp;</div> 

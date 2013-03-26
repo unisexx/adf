@@ -1,7 +1,7 @@
 <?php
 class Contents extends Admin_Controller
 {
-	public $array = array('pages'=>'ข่าวสาร');
+	public $array = array('articles'=>'บทความ','weblinks'=>'ลิ้งค์เพื่อนบ้าน');
 	
 	function __construct()
 	{
@@ -12,15 +12,11 @@ class Contents extends Admin_Controller
 	{
 		$data['type'] = $type;
 		$data['type_name']=$this->array[$type];
-		// $data['contents'] = new $type();
 		$data['contents'] = new Content();
 		if(@$_GET['search'])$data['contents']->where("title like '%".$_GET['search']."%'");
-		if(@$_GET['status'])$data['contents']->where('status',$_GET['status']);
 		if(@$_GET['category_id'])$data['contents']->where("category_id = ".$_GET['category_id']);
 		$data['contents']->where('module = "'.$type.'"');
 		$data['contents']->order_by('id','desc')->get_page();
-		$this->template->append_metadata(js_lightbox());
-		$this->template->append_metadata(js_checkbox('approve'));
 		$this->template->build('admin/index',$data);
 	}
 	
@@ -36,12 +32,13 @@ class Contents extends Admin_Controller
         	$data['attachs']->where("module = '".$type."' and content_id = ".$id)->order_by('id','asc')->get();
         }
         
-		//$this->template->append_metadata(js_datepicker());
 		if($type=='vdos'){
 			$this->template->build('admin/vdo_form',$data);
 		}elseif($type=='downloads'){
 			$this->template->build('admin/download_form',$data);
-		}else{
+		}elseif($type=='weblinks'){
+            $this->template->build('admin/weblink_form',$data);
+        }else{
 			$this->template->build('admin/form',$data);
 		}
 	}
@@ -93,7 +90,7 @@ class Contents extends Admin_Controller
 		}
 	}
 	
-	function approve($type=false,$id)
+	function index_approve($type=false,$id)
 	{
 		if($_POST)
 		{
@@ -102,7 +99,6 @@ class Contents extends Admin_Controller
 			$content->approve_date = date("Y-m-d H:i:s");
 			$content->from_array($_POST);
 			$content->save();
-			// echo approve_comment($content);
 		}
 
 	}
@@ -113,9 +109,9 @@ class Contents extends Admin_Controller
 		{
 			$content = new Content($id);
 			$content->delete();
-            $attachs = new Attach();
-            $attachs->where("module = '".$type."' and content_id = ".$id)->get();
-            foreach($attachs as $item) $item->delete();
+            // $attachs = new Attach();
+            // $attachs->where("module = '".$type."' and content_id = ".$id)->get();
+            // foreach($attachs as $item) $item->delete();
 			set_notify('success', lang('delete_data_complete'));
 		}
 		redirect($_SERVER['HTTP_REFERER']);

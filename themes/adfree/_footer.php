@@ -17,27 +17,23 @@
         </div>
         <div class="span3">
             <div class="widget">
-                <h4>Browse pages</h4>
+                <h4>บทความ</h4>
                 <ul class="nav nav-list regular">
-                    <li class="nav-header">More from us</li>
-                    <li><a href="#">Work for us</a></li>
-                    <li><a href="#">Creative process</a></li>
-                    <li><a href="#">Case study</a></li>
-                    <li class="nav-header">Quick links</li>
-                    <li><a href="#">Scaffold awwards</a></li>
-                    <li><a href="#">Meet the team</a></li>
+                    <?php echo modules::run('contents/inc_footer_articles'); ?>
                 </ul>
             </div>
         </div>
         <div class="span3">
             <div class="widget">
-                <h4>ทวิตล่าสุด</h4>
-                <div class="twitter"><ul class="tweet_list"><li class="tweet_first tweet_odd"><a class="tweet_avatar" href="http://twitter.com/wrapbootstrap"><img src="http://a0.twimg.com/profile_images/1814623373/twitter_icon_normal.png" height="20" width="20" alt="wrapbootstrap's avatar" border="0" title="wrapbootstrap's avatar"></a><span class="tweet_time"><a href="http://twitter.com/wrapbootstrap/status/313642747296886785" title="view tweet on twitter">about 6 days ago</a></span> <span class="tweet_join">we were checking out</span> <span class="tweet_text">12 new themes! <a href="https://wrapbootstrap.com/themes/page.1/sort.date/order.desc">wrapbootstrap.com/themes/page.1/…</a></span></li><li class="tweet_even"><a class="tweet_avatar" href="http://twitter.com/wrapbootstrap"><img src="http://a0.twimg.com/profile_images/1814623373/twitter_icon_normal.png" height="20" width="20" alt="wrapbootstrap's avatar" border="0" title="wrapbootstrap's avatar"></a><span class="tweet_time"><a href="http://twitter.com/wrapbootstrap/status/310852698608123904" title="view tweet on twitter">about 13 days ago</a></span> <span class="tweet_join">we were checking out</span> <span class="tweet_text">Anxious to preview Bootstrap 3? <a href="http://rc.getbootstrap.com/">rc.getbootstrap.com</a></span></li></ul></div>
+                <h4>ลิ้งค์เพื่อนบ้าน</h4>
+                <ul class="nav nav-list regular">
+                    <?php echo modules::run('contents/inc_footer_weblinks'); ?>
+                </ul>
             </div>
         </div>
         <div class="span3">
             <div class="widget">
-                <h4>อัพเดทข่าวสารทางอีเมล์</h4>
+                <h4>ติดตาม Adfree ได้ที่</h4>
                 <form class="form-horizontal" action="#" method="post">
                     <fieldset>
                         <p>

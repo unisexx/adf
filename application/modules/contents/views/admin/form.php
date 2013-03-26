@@ -27,8 +27,9 @@ $(document).ready(function(){
 });
 </script>
 
-<ul class="breadcrumb">
-  <li class="active">ข่าวสาร</li>
+<ul class="breadcrumb mywizard">
+  <li><a href="contents/admin/contents/index/<?=$type?>"><?=$type_name?></a></li>
+  <li class="active">ฟอร์ม</li>
 </ul>
 
 <div class="page-header">
@@ -45,8 +46,9 @@ $(document).ready(function(){
 		</td>
 	</tr>
 	<tr><th>รูปภาพ :</th><td><input type="file" name="image" /></td></tr>
-	<?php if($type == 'inspect' or $type == 'project' or $type == 'outstand' or $type == 'pratice' or $type == 'meeting' or $type == 'seat' or $type == 'inspect_int' or $type == 'stat' or $type == 'support' or $type == 'km'):?>
-	<tr><th>หมวดหมู่ :</th><td><?php echo form_dropdown('category_id',$content->category->get_option(),$content->category_id,'');?></td></tr>
+	<?php if($type == 'articles'):?>
+	<tr><th>หมวดหมู่ :</th><td><?php echo form_dropdown('category_id',get_option('id','name','categories where module="'.$type.'" and parents <> 0'),$content->category_id,'');?></td></tr>
+	<!-- get_option('id','name','categories where module="'.$type.'" and parents <> 0') -->
 	<?php endif;?>
 	<tr>
 		<th>หัวข้อ :</th>

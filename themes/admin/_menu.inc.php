@@ -7,9 +7,9 @@
 <li><a href="forms/admin/forms/wants">ความต้องการ</a></li>
 <li><a href="forms/admin/forms/types">ประเภทสินค้า</a></li>
 <li><a href="adfrees/admin/adfrees">ฟรีประกาศ</a></li>
-<li class="nav-header">Content</li>
-<li><a href="contents/admin/contents/index/pages">ข่าวสาร</a></li>
-<li><a href="forms/admin/forms/types">ลิ้งค์เพื่อนบ้าน</a></li>
+<li class="nav-header">Content Management</li>
+<li><a href="contents/admin/contents/index/articles">บทความ</a></li>
+<li><a href="contents/admin/contents/index/weblinks">ลิ้งค์เพื่อนบ้าน</a></li>
 </ul>
 
     <!-- <?php if(permission('permissions', 'read')):?>

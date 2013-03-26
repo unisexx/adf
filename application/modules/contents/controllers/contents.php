@@ -1,9 +1,7 @@
 <?php
 class Contents extends Public_Controller
 {
-	public $array = array('informations'=>'ข่าวประชาสัมพันธ์','articles'=>'บทความน่าสนใจ','vdos'=>'vdo แนะนำ','downloads'=>'เอกสารดาวน์โหลด','histories'=>'ความเป็นมาศูนย์เด็กเล็กปลอดโรค');
-	
-	public $header_img = array('informations'=>'<img src="themes/hps/images/title_news.png" width="698" height="47">','articles'=>'<img src="themes/hps/images/title_article.png" width="698" height="47">','vdos'=>'<img src="themes/hps/images/title_vdo.png" width="698" height="47">','histories'=>'','downloads'=>'');
+	public $array = array('articles'=>'บทความ','weblinks'=>'ลิ้งค์เพื่อนบ้าน');
 	
     function __construct()
     {
@@ -22,17 +20,17 @@ class Contents extends Public_Controller
         }
     }
 	
-	function inc_home_informations(){
+	function inc_footer_articles(){
 		$data['contents'] = new Content();
-		$data['contents']->where("module = 'informations'")->order_by('id','desc')->get(4);
-		$this->load->view('inc_home_informations',$data);
+		$data['contents']->where("module = 'articles'")->order_by('id','desc')->get();
+		$this->load->view('inc_footer_articles',$data);
 	}
-	
-	function inc_home_articles(){
-		$data['contents'] = new Content();
-		$data['contents']->where("module = 'articles'")->order_by('id','desc')->get(5);
-		$this->load->view('inc_home_articles',$data);
-	}
+    
+    function inc_footer_weblinks(){
+        $data['contents'] = new Content();
+        $data['contents']->where("module = 'weblinks'")->order_by('id','desc')->get();
+        $this->load->view('inc_footer_weblinks',$data);
+    }
 	
 	function inc_home_vdos(){
 		$data['contents'] = new Content();
