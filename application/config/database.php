@@ -42,9 +42,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '1234';
-$db['default']['database'] = 'adfree';
+$db['default']['username'] = 'plusdesi_adf';
+$db['default']['password'] = '123456789';
+$db['default']['database'] = 'plusdesi_adfs';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

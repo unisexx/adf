@@ -4,12 +4,13 @@
         <div class="span3">
             <div class="widget">
                 <h4>เกี่ยวกับเรา</h4>
-                <address>
+                <!-- <address>
                 <strong>Adfree, Inc.</strong><br>
                  445 Mypark Ave, Suite 800<br>
                  Jakarta, Indonesia 14210<br>
                 <abbr title="Phone">P:</abbr> (123) 456-7890 </address>
-                <address>
+                <address> -->
+                <h1 style="font-size:13px; line-height: normal"><strong>Adfree</strong> - แอดฟรี ฟรีโพสต์ ฟรีประกาศ ซื้อ-ขายสินค้า ตลาดออนไลน์ โปรโมทสินค้าฟรี ลงโฆษณาฟรี</h1><br>
                 <strong>ติดต่อเรา</strong><br>
                 <a href="mailto:#">hello@websitename.com</a>
                 </address>
@@ -37,12 +38,12 @@
                 <form class="form-horizontal" action="#" method="post">
                     <fieldset>
                         <p>
-                             ติดตามข่าวสารอัพเดท หรือประกาศต่างๆของทางเว็บไซต์ง่ายๆผ่านทางอีเมล์ของท่านเอง
+                             ติดตามข่าวสารอัพเดท หรือประกาศต่างๆของทางเว็บไซต์ง่ายๆผ่านทางโซเชียลมีเดีย
                         </p>
-                        <div class="input-prepend input-append">
+                        <!-- <div class="input-prepend input-append">
                             <input class="span2" id="appendedPrependedInput" type="text" placeholder="อีเมล์">
                             <button class="btn btn-inverse" type="submit">สมัคร!</button>
-                        </div>
+                        </div> -->
                     </fieldset>
                 </form>
                 <ul class="social_small">

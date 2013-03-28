@@ -31,6 +31,7 @@
                   <input class="span2" type="text" name="username" placeholder="Username">
                   <input class="span2" type="password" name="password" placeholder="Password">
                   <button type="submit" class="btn">ล็อกอิน</button>
+                  <a class="btn" href="users/register">สมัครสมาชิก</a>
                 </form>
             <?php endif;?>
             </div>

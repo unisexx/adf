@@ -1,4 +1,7 @@
 <?php include("_tabmenu.php")?>
+<div class="alert alert-info">
+    การอัพเดทประกาศจะทำให้ประกาศของคุณถูกดันขึ้นมาอยู่ด้านบนสุด ดังนั้นควรอัพเดทประกาศของคุณอยู่สม่ำเสมอ
+</div>
 
 <form id="notice" class="form-horizontal" method="post" action="myaccounts/adfree_save/<?php echo $adfree->id?>">
     <div class="control-group">
