@@ -13,18 +13,18 @@
 <script>
 jQuery(document).ready(function($) {
       // Twitter Footer
-        $(".twitter").tweet({
-        join_text: "auto",
-        username: "wrapbootstrap",
-        avatar_size: 20,
-        count: 2,
-        auto_join_text_default: "we said,",
-        auto_join_text_ed: "we",
-        auto_join_text_ing: "we were",
-        auto_join_text_reply: "we replied",
-        auto_join_text_url: "we were checking out",
-        loading_text: "loading tweets..."
-        });
+        // $(".twitter").tweet({
+        // join_text: "auto",
+        // username: "wrapbootstrap",
+        // avatar_size: 20,
+        // count: 2,
+        // auto_join_text_default: "we said,",
+        // auto_join_text_ed: "we",
+        // auto_join_text_ing: "we were",
+        // auto_join_text_reply: "we replied",
+        // auto_join_text_url: "we were checking out",
+        // loading_text: "loading tweets..."
+        // });
 
       // Create the dropdown base
       $("<select />").appendTo("nav");
@@ -80,9 +80,9 @@ jQuery(document).ready(function($) {
     });
 
     $('ul.nav li.dropdown').hover(function () {
-        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn();
+        $(this).find('.dropdown-menu').stop(true, true).delay(0).fadeIn();
     }, function () {
-        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut();
+        $(this).find('.dropdown-menu').stop(true, true).delay(0).fadeOut();
     });
     
     // tooltip

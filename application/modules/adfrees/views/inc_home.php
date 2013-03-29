@@ -1,14 +1,14 @@
-<h3 class="heading-success"><span class="btn btn-large btn-success"><i class="m-icon-big-swapright m-icon-white"></i></span>&nbsp;&nbsp;ประกาศล่าสุด</h3>
+<h3>ประกาศล่าสุด</h3>
 
-<form class="form-inline well well-success box" method="get" action="adfrees">
+<form class="form-inline well well-success" method="get" action="adfrees">
   <?php echo form_dropdown('adf_want_id',get_option('id','title','adf_wants'),@$_GET['adf_want_id'],'','--- ความต้องการ ---') ?>
    <?php echo form_dropdown('adf_category_id',get_option('id','title','adf_categories'),@$_GET['adf_category_id'],'','--- หมวดหมู่ประกาศหลัก ---') ?>
    <?php echo form_dropdown('adf_sub_category_id',get_option('id','title','adf_sub_categories'),@$_GET['adf_sub_category_id'],'','--- หมวดหมู่ประกาศย่อย ---') ?>
   <input type="text" name="title" placeholder="คำค้นหา" value="<?php echo @$_GET['title']?>">
-  <input type="submit" class="btn" value="ค้นหา">
+  <input type="submit" class="btn btn-primary" value="ค้นหา">
 </form>
 
-<table class="table table-hover">
+<table class="table table-striped">
     <tbody>
         <?php foreach($adfrees as $key=>$adfree):?>
             <tr>

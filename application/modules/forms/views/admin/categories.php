@@ -26,12 +26,14 @@
 	<input type="submit" class="btn" value="บันทึก">
 </form>
 
+<form id="order" action="forms/admin/forms/save_orderlist" method="post">
 <table class="table table-hover">
     <thead>
 	<tr>
 	    <th>สถานะ</th>
-		<th>#</th>
+	    <th>ลำดับ</th>
 		<th>ไอค่อน</th>
+		<th>รูปภาพ</th>
 		<th>ชื่อหมวดหมู่</th>
 		<th>จำนวนหมวดหมู่ย่อย</th>
 		<th></th>
@@ -41,8 +43,12 @@
 	<?php foreach($categories as $key=>$row):?>
     	<tr>
     	    <td><input type="checkbox" name="status" value="<?php echo $row->id ?>" <?php echo ($row->status=="approve")?'checked="checked"':'' ?> <?php echo (@$_POST['status']=="approve")?'':'' ?> /></td>
-    		<td><?=$key+1?></td>
-    		<td><img src="<?=$row->image?>"></td>
+    	    <td>
+    	        <input type="text" name="orderlist[]" value="<?php echo $row->orderlist ? $row->orderlist : $row->id ; ?>" class="input-mini">
+                <input type="hidden" name="orderid[]" value="<?php echo $row->id ?>">
+            </td>
+    		<td><i class="<?=$row->icon?> icon-2x"></i></td>
+    		<th><img src="<?=$row->image?>"></th>
 	        <td><?=$row->title?></td>
 	        <td><?=$row->adf_sub_category->result_count()?></td>
 	        <td>
@@ -54,3 +60,5 @@
     <?php endforeach;?>
 	</tbody>
 </table>
+<input class="btn" type="submit" value="บันทึก">  
+</form>

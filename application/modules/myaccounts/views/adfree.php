@@ -17,7 +17,7 @@
             <th></th>
             <th></th>
             <th></th>
-            <th><a href="myaccounts/adfree_form"><div class="btn btn-primary">เพิ่มรายการ</div></a></th>
+            <th><a href="myaccounts/adfree_form"><div class="btn btn-primary"><i class="icon-plus icon-large"></i> เพิ่มรายการ</div></a></th>
         </tr>
     </thead>
     <tbody>
@@ -51,9 +51,9 @@
                     <div><?php echo $adfree->user->amphur->amphur_name?></div>
                 </td>
                 <td>
-                    <a href="adfrees/view/<?php echo $adfree->id?>" target="_blank"><div class="btn btn-small btn-success">วิว</div>
-                    <a href="myaccounts/adfree_form/<?php echo $adfree->id?>"><div class="btn btn-small btn-info">แก้ไข</div></a>
-                    <a href="myaccounts/adfree_delete/<?php echo $adfree->id?>"><div class="btn btn-small btn-danger">ลบ</div></a>
+                    <a class="btn btn-success btn-small" href="adfrees/view/<?php echo $adfree->id?>" target="_blank"><i class="icon-zoom-in icon-large"></i> วิว</a>
+                    <a class="btn btn-info btn-small" href="myaccounts/adfree_form/<?php echo $adfree->id?>"><i class="icon-edit icon-large"></i> แก้ไข</a>
+                    <a class="btn btn-danger btn-small" href="myaccounts/adfree_delete/<?php echo $adfree->id?>"><i class="icon-trash icon-large"></i> ลบ</a>
                 </td>
             </tr>
         <?php endforeach;?>

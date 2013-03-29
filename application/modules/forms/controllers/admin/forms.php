@@ -10,7 +10,7 @@ class Forms extends Admin_Controller
     function categories($id=false){
     	$data['category'] = new Adf_category($id);
     	$data['categories'] = new Adf_category();
-		$data['categories']->order_by('id','desc')->get();
+		$data['categories']->order_by('orderlist','asc')->get();
         $this->template->build('admin/categories',$data);
     }
 	
@@ -156,6 +156,23 @@ class Forms extends Admin_Controller
             $new->from_array($_POST);
             $new->save();
         }
+    }
+    
+    function save_orderlist($id=FALSE){
+        if($_POST)
+        {
+            foreach($_POST['orderlist'] as $key => $item)
+            {
+                if($item)
+                {
+                    $category = new Adf_category(@$_POST['orderid'][$key]);
+                    $category->from_array(array('orderlist' => $item));
+                    $category->save();
+                }
+            }
+            set_notify('success', lang('save_data_complete'));
+        }
+        redirect($_SERVER['HTTP_REFERER']);
     }
 }
 ?>

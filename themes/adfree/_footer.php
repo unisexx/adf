@@ -67,7 +67,7 @@
             </div>
             <div class="span6">
                 <p class="pull-right">
-                    Designed by <a href="http://iweb-studio.com">iWebStudio</a>
+                    Designed by <a href="#">iWebStudio</a>
                 </p>
             </div>
         </div>

@@ -79,6 +79,18 @@
     </div>
   </div>
   <div class="control-group">
+        <label class="control-label" for="inputPass">รหัสผ่าน</label>
+        <div class="controls">
+          <input type="password" name="password" id="inputPass" placeholder="Password">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="re-inputPass">ยืนยันรหัสผ่าน</label>
+        <div class="controls">
+          <input type="password" name="_password" id="re-inputPass" placeholder="Re Password">
+        </div>
+    </div>
+  <div class="control-group">
     <label class="control-label" for="inputCaptcha">รหัสลับ</label>
     <div class="controls">
       <img src="users/captcha" /><Br>

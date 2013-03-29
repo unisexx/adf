@@ -18,10 +18,8 @@ $(document).ready(function(){
 	
 	$(window).scroll(function() {
     if($(this).scrollTop() != 0) {
-            //$('#toTop').fadeIn();
             $('#footer-back-to-top').removeClass('offscreen');
         } else {
-            //$('#toTop').fadeOut();
             $('#footer-back-to-top').addClass('offscreen');
         }
     });
@@ -70,7 +68,7 @@ $(document).ready(function(){
 			});
 	});
 	
-	$("#regisform").validate({
+	$(".validate").validate({
 	rules: 
 	{
 		username: 
@@ -93,6 +91,18 @@ $(document).ready(function(){
 		_password:
 		{
 			equalTo: "#inputPass"
+		},
+		adf_want_id: 
+		{ 
+			required: true
+		},
+		adf_category_id: 
+		{ 
+			required: true
+		},
+		adf_sub_category_id: 
+		{ 
+			required: true
 		},
 		captcha:
 		{
@@ -123,105 +133,6 @@ $(document).ready(function(){
 		{
 			equalTo: "กรุณากรอกรหัสผ่านให้ตรงกันทั้ง 2 ช่อง"
 		},
-		captcha:
-		{
-			required: "กรุณากรอกตัวอักษรตัวที่เห็นในภาพ",
-			remote: "กรุณากรอกตัวอักษรให้ตรงกับภาพ"
-		}
-	}
-	});
-	
-	$("#forget").validate({
-    rules: 
-    {
-        email: 
-        { 
-            required: true,
-            email: true
-            //remote: "users/check_email"
-        },
-        captcha:
-        {
-            required: true,
-            remote: "users/check_captcha"
-        }
-    },
-    messages:
-    {
-        email: 
-        { 
-            required: "กรุณากรอกอีเมล์",
-            email: "กรุณากรอกอีเมล์ให้ถูกต้อง"
-            //remote: "อีเมล์นี้ไม่สามารถใช้งานได้"
-        },
-        captcha:
-        {
-            required: "กรุณากรอกตัวอักษรตัวที่เห็นในภาพ",
-            remote: "กรุณากรอกตัวอักษรให้ตรงกับภาพ"
-        }
-    }
-    });
-    
-    $("#repass").validate({
-    rules: 
-    {
-        password: 
-        {
-            required: true,
-            minlength: 4
-        },
-        _password:
-        {
-            equalTo: "#inputPass"
-        },
-        captcha:
-        {
-            required: true,
-            remote: "users/check_captcha"
-        }
-    },
-    messages:
-    {
-        password: 
-        {
-            required: "กรุณากรอกรหัสผ่าน",
-            minlength: "กรุณากรอกรหัสผ่านอย่างน้อย 4 ตัวอักษร"
-        },
-        _password:
-        {
-            equalTo: "กรุณากรอกรหัสผ่านให้ตรงกันทั้ง 2 ช่อง"
-        },
-        captcha:
-        {
-            required: "กรุณากรอกตัวอักษรตัวที่เห็นในภาพ",
-            remote: "กรุณากรอกตัวอักษรให้ตรงกับภาพ"
-        }
-    }
-    });
-    
-    $("#notice").validate({
-	rules: 
-	{
-		adf_want_id: 
-		{ 
-			required: true
-		},
-		adf_category_id: 
-		{ 
-			required: true
-		},
-		adf_sub_category_id: 
-		{ 
-			required: true
-		},
-		captcha:
-		{
-			required: true,
-			remote: "users/check_captcha"
-		}
-	},
-	messages:
-	{
 		adf_want_id: 
 		{ 
 			required: "กรุณาเลือกความต้องการ"
@@ -241,6 +152,117 @@ $(document).ready(function(){
 		}
 	}
 	});
+	
+	// $("#forget").validate({
+    // rules: 
+    // {
+        // email: 
+        // { 
+            // required: true,
+            // email: true
+            // //remote: "users/check_email"
+        // },
+        // captcha:
+        // {
+            // required: true,
+            // remote: "users/check_captcha"
+        // }
+    // },
+    // messages:
+    // {
+        // email: 
+        // { 
+            // required: "กรุณากรอกอีเมล์",
+            // email: "กรุณากรอกอีเมล์ให้ถูกต้อง"
+            // //remote: "อีเมล์นี้ไม่สามารถใช้งานได้"
+        // },
+        // captcha:
+        // {
+            // required: "กรุณากรอกตัวอักษรตัวที่เห็นในภาพ",
+            // remote: "กรุณากรอกตัวอักษรให้ตรงกับภาพ"
+        // }
+    // }
+    // });
+    
+    // $("#repass").validate({
+    // rules: 
+    // {
+        // password: 
+        // {
+            // required: true,
+            // minlength: 4
+        // },
+        // _password:
+        // {
+            // equalTo: "#inputPass"
+        // },
+        // captcha:
+        // {
+            // required: true,
+            // remote: "users/check_captcha"
+        // }
+    // },
+    // messages:
+    // {
+        // password: 
+        // {
+            // required: "กรุณากรอกรหัสผ่าน",
+            // minlength: "กรุณากรอกรหัสผ่านอย่างน้อย 4 ตัวอักษร"
+        // },
+        // _password:
+        // {
+            // equalTo: "กรุณากรอกรหัสผ่านให้ตรงกันทั้ง 2 ช่อง"
+        // },
+        // captcha:
+        // {
+            // required: "กรุณากรอกตัวอักษรตัวที่เห็นในภาพ",
+            // remote: "กรุณากรอกตัวอักษรให้ตรงกับภาพ"
+        // }
+    // }
+    // });
+    
+    // $("#notice").validate({
+	// rules: 
+	// {
+		// adf_want_id: 
+		// { 
+			// required: true
+		// },
+		// adf_category_id: 
+		// { 
+			// required: true
+		// },
+		// adf_sub_category_id: 
+		// { 
+			// required: true
+		// },
+		// captcha:
+		// {
+			// required: true,
+			// remote: "users/check_captcha"
+		// }
+	// },
+	// messages:
+	// {
+		// adf_want_id: 
+		// { 
+			// required: "กรุณาเลือกความต้องการ"
+		// },
+		// adf_category_id: 
+		// { 
+			// required: "กรุณาเลือกหมวดหมู่ประกาศหลัก"
+		// },
+		// adf_sub_category_id: 
+		// { 
+			// required: "กรุณาเลือกหมวดหมู่ย่อย"
+		// },
+		// captcha:
+		// {
+			// required: "กรุณากรอกตัวอักษรตัวที่เห็นในภาพ",
+			// remote: "กรุณากรอกตัวอักษรให้ตรงกับภาพ"
+		// }
+	// }
+	// });
     
     tinyMCE.init({
 		mode : "textareas",

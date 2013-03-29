@@ -15,6 +15,7 @@ class Users extends Public_Controller{
         {
         	$captcha = $this->session->userdata('captcha');
 			if(($_POST['captcha'] == $captcha) && !empty($captcha)){
+			    $_POST['password'] = encrypt_pass($_POST['password']);
 	            $user = new User();
 	            $user->from_array($_POST);
 	            $user->save();
@@ -114,11 +115,17 @@ class Users extends Public_Controller{
     
     function forget_pass_save(){
         if($_POST){
-            $user = new User();
-            $user = $user->where('email', $_POST['email'])->limit(1)->get();
-            
-            $this->send_mail($user->password,$_POST['email']);
-            set_notify('success', 'ระบบได้ทำการส่งเมล์แจ้งรหัสผ่านเรียบร้อยแล้วค่ะ');
+            $captcha = $this->session->userdata('captcha');
+            if(($_POST['captcha'] == $captcha) && !empty($captcha)){
+                $auth_key = md5(rand());
+                $user = new User();
+                $user->where('email', $_POST['email'])->update(array('auth_key'=>$auth_key));
+                $this->send_mail($auth_key,$_POST['email']);
+                set_notify('success', 'ระบบได้ทำการส่งเมล์ยืนยันการเปลี่ยนรหัสเรียบร้อยแล้วค่ะ');
+            }else{
+                set_notify('error','กรอกรหัสไม่ถูกต้อง');
+                redirect($_SERVER['HTTP_REFERER']);
+            }
         }
         redirect('home');
     }
@@ -142,7 +149,7 @@ class Users extends Public_Controller{
     function repass_save(){
         if($_POST){
             $user = new User();
-            $_POST['password'] = md5(sha1($_POST['password']."secret"));
+            $_POST['password'] = encrypt_pass($_POST['password']);
             $user->where('auth_key', $_POST['auth_key'])->update(array(
                 'password'=>$_POST['password'],
                 'auth_key'=>''
@@ -152,14 +159,14 @@ class Users extends Public_Controller{
         redirect('home');
     }
     
-    function send_mail($password,$email){
+    function send_mail($auth_key,$email){
         
         $config = Array(
             'protocol' => 'smtp',
             'smtp_host' => 'ssl://smtp.googlemail.com',
             'smtp_port' => 465,
-            'smtp_user' => 'fdsiakrin@gmail.com',
-            'smtp_pass' => 'f@vourite',
+            'smtp_user' => 'noreply.adfree@gmail.com',
+            'smtp_pass' => 'Des@gn;9',
             'mailtype'  => 'html', 
             'charset'   => 'utf-8'
         );
@@ -167,10 +174,10 @@ class Users extends Public_Controller{
         $this->email->set_newline("\r\n");
         
         // Set to, from, message, etc.
-        $this->email->from('fdsiakrin@gmail.com', 'ศูนย์เด็กเล็กปลอดโรค');
+        $this->email->from('noreply.adfree@gmail.com', 'noreply.adfree');
         $this->email->to($email); //ส่งถึงใคร
-        $this->email->subject('แจ้งรหัสผ่าน เว็บไซต์ศูนย์เด็กเล็กปลอดโรค'); //หัวข้อของอีเมล
-        $this->email->message('สวัสดีครับ<br><br>รหัสผ่านของคุณคือ : '.$password); //เนื้อหาของอีเมล
+        $this->email->subject('ยืนยันการเปลี่ยนรหัสผ่านใหม่ - adfree.in.th'); //หัวข้อของอีเมล
+        $this->email->message('สวัสดีครับ<br><br>หากคุณต้องการเปลี่ยนรหัสผ่านใหม่กรุณาคลิกตามลิ้งค์ที่ปรากฏ<br><br>http://www.adfree.in.th/users/repass/'.$auth_key); //เนื้อหาของอีเมล
         
         $result = $this->email->send();
         //echo $this->email->print_debugger();

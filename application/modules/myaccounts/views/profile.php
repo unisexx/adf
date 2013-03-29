@@ -3,7 +3,7 @@
     ข้อมูลการติดต่อจะแสดงในทุกการประกาศของคุณ เพื่อความสะดวกในการติดต่อจากบุคคลอื่นกรุณากรอกข้อมูลตามความเป็นจริงให้ครบถ้วน
 </div>
 
-<form class="form-horizontal" method="post" action="myaccounts/profile_save">
+<form class="form-horizontal validate" method="post" action="myaccounts/profile_save">
   <div class="control-group">
     <label class="control-label" for="name">ชื่อ - นามสกุล</label>
     <div class="controls">

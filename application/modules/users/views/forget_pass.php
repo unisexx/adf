@@ -1,39 +1,3 @@
-<script type="text/javascript" src="media/js/jquery.validate.min.js"></script>
-<script language="javascript">
-$(function(){
-    $("#forget").validate({
-    rules: 
-    {
-        email: 
-        { 
-            required: true,
-            email: true
-            //remote: "users/check_email"
-        },
-        captcha:
-        {
-            required: true,
-            remote: "users/check_captcha"
-        }
-    },
-    messages:
-    {
-        email: 
-        { 
-            required: "กรุณากรอกอีเมล์",
-            email: "กรุณากรอกอีเมล์ให้ถูกต้อง"
-            //remote: "อีเมล์นี้ไม่สามารถใช้งานได้"
-        },
-        captcha:
-        {
-            required: "กรุณากรอกตัวอักษรตัวที่เห็นในภาพ",
-            remote: "กรุณากรอกตัวอักษรให้ตรงกับภาพ"
-        }
-    }
-    });
-});
-</script>
-
 <ul class="breadcrumb">
   <li><a href="home">หน้าแรก</a> <span class="divider">/</span></li>
   <li class="active">ลืมรหัสผ่าน</li>
@@ -44,7 +8,7 @@ $(function(){
 
 <div class="row">
     <div class="span8">
-        <form id="forget" class="form-horizontal" method="post" action="users/forget_pass_save">
+        <form class="form-horizontal" method="post" action="users/forget_pass_save">
             <div class="control-group">
                 <label class="control-label" for="inputEmail">อีเมล์</label>
                 <div class="controls">

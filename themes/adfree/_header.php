@@ -14,7 +14,7 @@
             <?php if(is_login()):?>
                 <div class="btn-group pull-right">
                   <a class="btn dropdown-toggle" data-toggle="dropdown">
-                    <?php //echo thumb(avatar(user_login()->id),20,20,1,"")?> <?php echo user_login()->username ?>
+                    <?php // echo thumb(avatar(user_login()->id),20,20,1,"")?> <i class="icon-user icon-white"></i> <?php echo user_login()->username ?>
                     <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu">
@@ -30,15 +30,16 @@
                 <form class="navbar-form pull-right" method="post" action="users/login">
                   <input class="span2" type="text" name="username" placeholder="Username">
                   <input class="span2" type="password" name="password" placeholder="Password">
-                  <button type="submit" class="btn">ล็อกอิน</button>
-                  <a class="btn" href="users/register">สมัครสมาชิก</a>
+                  <button type="submit" class="btn btn-info">ล็อกอิน</button>
+                  <a class="btn btn-danger" href="users/forget_pass">ลืมรหัสผ่าน</a>
+                  <!-- <a class="btn btn-success" href="users/register">สมัครสมาชิก</a> -->
                 </form>
             <?php endif;?>
             </div>
             
             <!-- end logo -->
             <!-- top menu -->
-            <!-- <div>
+            <div>
                 <nav>
                 <ul class="nav topnav">
                     <li class="dropdown success">
@@ -102,7 +103,7 @@
                         <li><a href="post_right_sidebar.html">Post right sidebar</a></li>
                     </ul>
                     </li>
-                    <?php if(is_login()):?>
+                    <!-- <?php if(is_login()):?>
                         <li class="dropdown inverse">
                         <a href="#"><i class="icon-user icon-white"></i> <?php echo user_login()->username ?></a>
                         <ul class="dropdown-menu">
@@ -121,10 +122,10 @@
                             <li><a href="users/register">สมัครสมาชิก</a></li>
                         </ul>
                         </li>
-                    <?php endif;?>
+                    <?php endif;?> -->
                 </ul>
                 </nav>
-            </div> -->
+            </div>
             <!-- end menu -->
         </div>
     </div>

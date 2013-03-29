@@ -26,6 +26,7 @@ class Users extends Admin_Controller
 		if($_POST){
             $captcha = $this->session->userdata('captcha');
             if(($_POST['captcha'] == $captcha) && !empty($captcha)){
+                $_POST['password'] = encrypt_pass($_POST['password']);
                 $user = new User($id);
                 $user->from_array($_POST);
                 $user->save();

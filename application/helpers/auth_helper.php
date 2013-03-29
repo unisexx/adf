@@ -2,6 +2,7 @@
 
 function login($username,$password)
 {
+    $password = encrypt_pass($password);
 	$CI =& get_instance();
 	$user = new User();
 	$user->where(array('username'=>$username,'password'=>$password))->get();
@@ -89,5 +90,9 @@ function permission($module, $action)
 	}else{
 		return FALSE;
 	}
+}
+
+function encrypt_pass($password){
+    return md5(sha1($_POST['password']."secret"));
 }
 ?>

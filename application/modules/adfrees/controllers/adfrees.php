@@ -18,7 +18,7 @@ class Adfrees extends Public_Controller {
     
     function inc_home_category(){
         $data['adf_categories'] = new Adf_category();
-        $data['adf_categories']->get();
+        $data['adf_categories']->order_by('orderlist','asc')->get();
         $this->load->view('inc_home_category',$data);
     }
     

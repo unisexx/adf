@@ -24,6 +24,7 @@ class Administrators extends Admin_Controller
 	{
 		if($_POST)
 		{
+		    $_POST['password'] = encrypt_pass($_POST['password']);
 			$user = new User($id);
 			$user->from_array($_POST);
 			$user->level_id = 1;
