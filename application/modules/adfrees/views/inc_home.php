@@ -8,7 +8,7 @@
   <input type="submit" class="btn btn-primary" value="ค้นหา">
 </form>
 
-<table class="table table-striped">
+<table class="table table-hover">
     <tbody>
         <?php foreach($adfrees as $key=>$adfree):?>
             <tr>

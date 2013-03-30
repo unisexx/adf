@@ -13,7 +13,7 @@
 	<input class="input input-xlarge" type="text" name="image" placeholder="ไอค่อนหมวดหมู่" value="<?php echo $category->image?>"/><input class="btn" type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'image')" />
 	</div>
 	
-	<div class="input-append">
+	<!-- <div class="input-append">
       <input class="input-medium" id="iconInput" type="text" name="icon">
       <div class="btn-group">
         <button class="btn dropdown-toggle" data-toggle="dropdown">เลือก<span class="caret"></span></button>
@@ -21,9 +21,9 @@
           <li class="select-icon"><a><i class="icon-camera-retro"></i> กล้องและอุปกรณ์</a></li>
         </ul>
       </div>
-    </div>
+    </div> -->
 
-	<input type="submit" class="btn" value="บันทึก">
+	<input type="submit" class="btn btn-primary" value="บันทึก">
 </form>
 
 <form id="order" action="forms/admin/forms/save_orderlist" method="post">
@@ -32,7 +32,7 @@
 	<tr>
 	    <th>สถานะ</th>
 	    <th>ลำดับ</th>
-		<th>ไอค่อน</th>
+		<!-- <th>ไอค่อน</th> -->
 		<th>รูปภาพ</th>
 		<th>ชื่อหมวดหมู่</th>
 		<th>จำนวนหมวดหมู่ย่อย</th>
@@ -47,7 +47,7 @@
     	        <input type="text" name="orderlist[]" value="<?php echo $row->orderlist ? $row->orderlist : $row->id ; ?>" class="input-mini">
                 <input type="hidden" name="orderid[]" value="<?php echo $row->id ?>">
             </td>
-    		<td><i class="<?=$row->icon?> icon-2x"></i></td>
+    		<!-- <td><i class="<?=$row->icon?> icon-2x"></i></td> -->
     		<th><img src="<?=$row->image?>"></th>
 	        <td><?=$row->title?></td>
 	        <td><?=$row->adf_sub_category->result_count()?></td>
