@@ -5,7 +5,7 @@
     <div class="navbar-inner">
         <div class="container">
             <!-- logo -->
-            <a class="brand logo" href="home">
+            <a class="brand logo" href="">
             <!-- <img src="assets/img/logo.png" alt=""> -->
                 <i class="icon-bullhorn icon-2x pull-left"></i>
                 <strong>Adfree</strong><br>ซื้อง่าย ขายคล่อง
@@ -13,16 +13,19 @@
             <div class="head-member">
             <?php if(is_login()):?>
                 <div class="btn-group pull-right">
-                  <a class="btn dropdown-toggle" data-toggle="dropdown">
+                  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                     <?php // echo thumb(avatar(user_login()->id),20,20,1,"")?> <i class="icon-user icon-white"></i> <?php echo user_login()->username ?>
                     <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu">
                     <!-- dropdown menu links -->
-                    <li><a href="myaccounts/profile">แก้ไขข้อมูล</a></li>
-                    <li><a href="users/logout">ออกจากระบบ</a></li>
+                    <li><a href="myaccounts/profile"><i class="icon-pencil"></i> แก้ไขข้อมูล</a></li>
+                    <li><a href="myaccounts/adfree"><i class="icon-plus"></i> จัดการประกาศ</a></li>
+                    <li class="divider"></li>
+                    <li><a href="users/logout"><i class="icon-off"></i> ออกจากระบบ</a></li>
                     <?php if(user_login()->level_id == '1'):?>
-                        <li><a href="admin" target="_blank">จัดการหลังบ้าน</a></li>
+                        <li class="divider"></li>
+                        <li><a href="admin" target="_blank"><i class="icon-home"></i> จัดการหลังบ้าน</a></li>
                     <?php endif;?>
                   </ul>
                 </div>
@@ -45,23 +48,7 @@
                     <li class="dropdown success">
                         <a href=""><i class="icon-home icon-white"></i> หน้าแรก</a>
                     </li>
-                    <li class="dropdown primary">
-                    <a href="#"><i class="icon-star icon-white"></i> Features</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="overview.html">Overview</a></li>
-                        <li><a href="scaffolding.html">Scaffolding</a></li>
-                        <li><a href="base-css.html">Base CSS</a></li>
-                        <li><a href="components.html">Components</a></li>
-                        <li><a href="javascript.html">Javascripts</a></li>
-                        <li class="dropdown"><a href="#">3rd level</a>
-                        <ul class="dropdown-menu sub-menu">
-                            <li><a href="#">Example menu</a></li>
-                            <li><a href="#">Example menu</a></li>
-                            <li><a href="#">Example menu</a></li>
-                        </ul>
-                        </li>
-                    </ul>
-                    </li>
+                    <?php echo modules::run('adfrees/inc_header_category');?>
                     <li class="dropdown danger">
                     <a href="#"><i class="icon-leaf icon-white"></i> Pages</a>
                     <ul class="dropdown-menu">

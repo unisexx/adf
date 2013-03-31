@@ -1,7 +1,6 @@
 <?php
 class Forms extends Admin_Controller
 {
-    
     function __construct()
     {
         parent::__construct();
@@ -11,6 +10,9 @@ class Forms extends Admin_Controller
     	$data['category'] = new Adf_category($id);
     	$data['categories'] = new Adf_category();
 		$data['categories']->order_by('orderlist','asc')->get();
+        
+        $data['icons'] = new Icon();
+        $data['icons']->order_by('id','asc')->get();
         $this->template->build('admin/categories',$data);
     }
 	
@@ -18,6 +20,7 @@ class Forms extends Admin_Controller
 		if($_POST){
 			$category = new Adf_category($id);
 			$_POST['status'] = 'approve';
+            $_POST['slug'] = clean_url($_POST['title']);
 			$category->from_array($_POST);
 			$category->save();
 			set_notify('success', 'บันทึกข้อมูลเรียบร้อย');
@@ -48,6 +51,7 @@ class Forms extends Admin_Controller
         if($_POST){
             $category = new Adf_sub_category($id);
             $_POST['status'] = 'approve';
+            $_POST['slug'] = clean_url($_POST['title']);
             $category->from_array($_POST);
             $category->save();
             set_notify('success', 'บันทึกข้อมูลเรียบร้อย');

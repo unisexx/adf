@@ -10,7 +10,7 @@
 <form method="post" action="forms/admin/forms/sub_categories_save/<?=$subcat_id->id?>" class="well form-inline">
 	<input type="text" name="title" value="<?=$subcat_id->title?>" placeholder="หมวดหมู่ย่อย">
 	<input type="hidden" name="adf_category_id" value="<?=$category->id?>">
-	<input type="submit" class="btn" value="บันทึก">
+	<input type="submit" class="btn btn-primary" value="บันทึก">
 </form>
 
 <table class="table table-hover">

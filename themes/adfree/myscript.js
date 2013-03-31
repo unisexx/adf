@@ -12,6 +12,11 @@ $(document).ready(function(){
 			// maxTags: 5
 		// });
     // }
+    $('li.select-category').click(function(){
+    	var category = $(this).find('input[type="hidden"]').val();
+    	$('#categoryInput').val(category);
+    });
+    
 	$('.navbar-fixed-top a[href="#"]').click(function(){
 		return false;
 	});

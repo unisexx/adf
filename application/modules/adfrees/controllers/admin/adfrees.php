@@ -15,9 +15,5 @@ class Adfrees extends Admin_Controller {
         $data['adfrees']->order_by('id','desc')->get_page();
         $this->template->build('admin/index',$data);
     }
-    
-    function form($id=false){
-        
-    }
 }
 ?>

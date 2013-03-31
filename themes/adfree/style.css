@@ -1,9 +1,14 @@
 body{padding-top: 90px; font-size: 13px!important;}
-a{color:#0069d6;}
+a:hover{text-decoration:none;}
 .well-non{border:none !important; background-color: #fff !important;}
 
 /************ header ************/
 .navbar .brand{width:200px;}
+
+/************ adfree search form ************/
+.dd-category a{color: #3074B9 !important; font-weight: bold !important;}
+.dd-category a:hover{color:#ffffff !important;}
+.dd-subcategory a{padding-left:30px !important;}
 
 /************ footer ************/
 #footer-back-to-top.offscreen {
@@ -377,13 +382,14 @@ nav select {
 footer {
     margin-top: 30px;
     padding-top:30px;
-    color:#f8f8f8;
-    background: #7CBB00;
+    color:#555;
+    background: url(http://e3.s1sf.com/df/0/di/df/bg-footer.png);
+    border-top: 5px solid orange;
 }
 
 
 footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
-    color:#fff;
+    color:#555;
 }
 
 footer .block-a {
@@ -391,7 +397,7 @@ footer .block-a {
 }
 
 footer a, footer a:hover {
-    color:#fff;
+    /*color:#fff;*/
 }
 
 footer a:hover {
@@ -402,7 +408,7 @@ footer a:hover {
 footer .verybottom {
     margin-top:30px;
     padding:30px 0 15px;
-    background:#0f0f0f;
+    background:#0f0f0f url(http://e3.s1sf.com/df/0/di/df/bg-footer-inside.png);
 }
 
 footer .nav-list li, footer .nav-list li a, footer .nav-list li.nav-header {

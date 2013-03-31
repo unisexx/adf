@@ -6,7 +6,7 @@ class Public_Controller extends Master_Controller
 		parent::__construct();
 		
 		// check lang
-		$this->template->title('adfree');
+		$this->template->title('ฟรีโพสต์ ฟรีประกาศ ลงโฆษณาฟรี');
 		$this->template->set_theme('adfree');
     	$this->template->set_layout('layout');
 		
