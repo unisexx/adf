@@ -29,10 +29,6 @@ class Adfrees extends Public_Controller {
     }
     
     function index(){
-        // form search
-        $data['categories'] = new Adf_category();
-        $data['categories']->order_by('orderlist','asc')->get();
-        
         // query
         $data['adfrees'] = new Adfree();
         if(@$_GET['adf_category_slug'])$data['category_slug'] = $_GET['adf_category_slug'];
@@ -47,7 +43,7 @@ class Adfrees extends Public_Controller {
     }
     
     function c($category_slug=false){
-        $data['category_slug'] = $category_slug;
+        $_GET['category'] = $category_slug; // fill value in search form
         
         $data['adfrees'] = new Adfree();
         $data['adfrees']->where_related_adf_category('slug', $category_slug);
@@ -56,7 +52,7 @@ class Adfrees extends Public_Controller {
     }
     
     function s($sub_category_slug=false){
-        $data['sub_category_slug'] = $sub_category_slug;
+        $_GET['category'] = $sub_category_slug; // fill value in search form
         
         $data['adfrees'] = new Adfree();
         $data['adfrees']->where_related_adf_sub_category('slug', $sub_category_slug);
@@ -99,5 +95,12 @@ class Adfrees extends Public_Controller {
         $data['sub_categories']->where('user_id = '.$id)->group_by('adf_sub_category_id')->order_by('updated desc')->get();
         $this->template->build('member',$data);
     }
+	
+	function search_form(){
+		// form search
+        $data['categories'] = new Adf_category();
+        $data['categories']->order_by('orderlist','asc')->get();
+		$this->load->view('search_form',$data);
+	}
 }
 ?>
