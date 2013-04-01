@@ -35,6 +35,7 @@
                   <input class="span2" type="password" name="password" placeholder="Password">
                   <button type="submit" class="btn btn-info">ล็อกอิน</button>
                   <a class="btn btn-danger" href="users/forget_pass">ลืมรหัสผ่าน</a>
+                  <a class="btn btn-primary" href="users/register">สมัครสมาชิก</button></a>
                   <!-- <a class="btn btn-success" href="users/register">สมัครสมาชิก</a> -->
                 </form>
             <?php endif;?>

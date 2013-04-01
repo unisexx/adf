@@ -1,6 +1,6 @@
 <?php echo modules::run('adfrees/search_form')?>
 
-<table class="table table-hover">
+<!-- <table class="table table-hover">
     <tbody>
         <?php foreach($adfrees as $key=>$adfree):?>
             <tr>
@@ -34,4 +34,20 @@
             </tr>
         <?php endforeach;?>
     </tbody>
-</table>
+</table> -->
+
+<ul class="unstyled">
+<?php foreach($adfrees as $key=>$adfree):?>
+	<li class="pull-left">
+		<div class="span3">
+			<a href="adfrees/view/<?php echo $adfree->id?>">
+	            <?php if($adfree->image):?>
+	                <img class="img-polaroid" src="<?php echo $adfree->image?>" width="270" height="190">
+	            <?php else:?>
+	                <img class="img-polaroid" data-src="holder.js/270x190" alt="270x190" src="http://placehold.it/270x190">
+	            <?php endif;?>
+            </a>
+		</div>
+	</li>
+<?php endforeach;?>
+</ul>
