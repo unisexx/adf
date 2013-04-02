@@ -1,5 +1,5 @@
-<li class="dropdown primary">
-<a href="adfrees"><i class="icon-star icon-white"></i> หมวดหมู่</a>
+<li class="dropdown">
+<a href="adfrees"><i class="icon-star"></i> หมวดหมู่</a>
 <ul class="dropdown-menu">
     <?php foreach($categories as $category):?>
         <li class="dropdown"><a href="adfrees/c/<?php echo $category->slug?>"><i class="<?php echo $category->icon?>"></i> <?php echo $category->title?></a>

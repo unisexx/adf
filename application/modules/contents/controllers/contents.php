@@ -20,6 +20,12 @@ class Contents extends Public_Controller
         }
     }
 	
+	function inc_header_category(){
+		$data['categories'] = new Category();
+		$data['categories']->where("module = 'articles' and parents != 0")->order_by('id','desc')->get();
+		$this->load->view('inc_header_category',$data);
+	}
+	
 	function inc_footer_articles(){
 		$data['contents'] = new Content();
 		$data['contents']->where("module = 'articles'")->order_by('id','desc')->get();

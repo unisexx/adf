@@ -45,6 +45,7 @@ line-height:16px;
 label.error{color:red; font-style:italic;}
 
 /************ adfree ************/
+
 .btn-xlarge {
 width: 100%;
 text-align: center;
@@ -413,7 +414,6 @@ footer .verybottom {
 
 footer .nav-list li, footer .nav-list li a, footer .nav-list li.nav-header {
     text-shadow:none;
-    color:#f6f6f6;
 }
 
 footer .nav-list li a {

@@ -12,6 +12,13 @@ $(document).ready(function(){
 			// maxTags: 5
 		// });
     // }
+    
+    $('ul.nav li.dropdown').hover(function () {
+        $(this).find('.dropdown-menu').stop(true, true).delay(0).fadeIn();
+    }, function () {
+        $(this).find('.dropdown-menu').stop(true, true).delay(0).fadeOut();
+    });
+    
     $('li.select-category').click(function(){
     	var category = $(this).find('input[type="hidden"]').val();
     	$('#categoryInput').val(category);
@@ -158,117 +165,31 @@ $(document).ready(function(){
 	}
 	});
 	
-	// $("#forget").validate({
-    // rules: 
-    // {
-        // email: 
-        // { 
-            // required: true,
-            // email: true
-            // //remote: "users/check_email"
-        // },
-        // captcha:
-        // {
-            // required: true,
-            // remote: "users/check_captcha"
-        // }
-    // },
-    // messages:
-    // {
-        // email: 
-        // { 
-            // required: "กรุณากรอกอีเมล์",
-            // email: "กรุณากรอกอีเมล์ให้ถูกต้อง"
-            // //remote: "อีเมล์นี้ไม่สามารถใช้งานได้"
-        // },
-        // captcha:
-        // {
-            // required: "กรุณากรอกตัวอักษรตัวที่เห็นในภาพ",
-            // remote: "กรุณากรอกตัวอักษรให้ตรงกับภาพ"
-        // }
-    // }
-    // });
+	// jquery wookmark
+	var options = {
+        autoResize: true, // This will auto-update the layout when the browser window is resized.
+        container: $('#main'), // Optional, used for some extra CSS styling
+        offset: 2, // Optional, the distance between grid items
+        itemWidth: 210 // Optional, the width of a grid item
+      };
+
+      // Get a reference to your grid items.
+      var handler = $('#tiles li');
+
+      // Call the layout function.
+      handler.wookmark(options);
+
+      // Capture clicks on grid items.
+      handler.click(function(){
+        // Randomize the height of the clicked item.
+        var newHeight = $('img', this).height() + Math.round(Math.random()*300+30);
+        $(this).css('height', newHeight+'px');
+
+        // Update the layout.
+        handler.wookmark();
+      });
     
-    // $("#repass").validate({
-    // rules: 
-    // {
-        // password: 
-        // {
-            // required: true,
-            // minlength: 4
-        // },
-        // _password:
-        // {
-            // equalTo: "#inputPass"
-        // },
-        // captcha:
-        // {
-            // required: true,
-            // remote: "users/check_captcha"
-        // }
-    // },
-    // messages:
-    // {
-        // password: 
-        // {
-            // required: "กรุณากรอกรหัสผ่าน",
-            // minlength: "กรุณากรอกรหัสผ่านอย่างน้อย 4 ตัวอักษร"
-        // },
-        // _password:
-        // {
-            // equalTo: "กรุณากรอกรหัสผ่านให้ตรงกันทั้ง 2 ช่อง"
-        // },
-        // captcha:
-        // {
-            // required: "กรุณากรอกตัวอักษรตัวที่เห็นในภาพ",
-            // remote: "กรุณากรอกตัวอักษรให้ตรงกับภาพ"
-        // }
-    // }
-    // });
-    
-    // $("#notice").validate({
-	// rules: 
-	// {
-		// adf_want_id: 
-		// { 
-			// required: true
-		// },
-		// adf_category_id: 
-		// { 
-			// required: true
-		// },
-		// adf_sub_category_id: 
-		// { 
-			// required: true
-		// },
-		// captcha:
-		// {
-			// required: true,
-			// remote: "users/check_captcha"
-		// }
-	// },
-	// messages:
-	// {
-		// adf_want_id: 
-		// { 
-			// required: "กรุณาเลือกความต้องการ"
-		// },
-		// adf_category_id: 
-		// { 
-			// required: "กรุณาเลือกหมวดหมู่ประกาศหลัก"
-		// },
-		// adf_sub_category_id: 
-		// { 
-			// required: "กรุณาเลือกหมวดหมู่ย่อย"
-		// },
-		// captcha:
-		// {
-			// required: "กรุณากรอกตัวอักษรตัวที่เห็นในภาพ",
-			// remote: "กรุณากรอกตัวอักษรให้ตรงกับภาพ"
-		// }
-	// }
-	// });
-    
+    // tiny MCE
     tinyMCE.init({
 		mode : "textareas",
 	    editor_selector : "editor[pm]",

@@ -50,17 +50,7 @@
                         <a href=""><i class="icon-home icon-white"></i> หน้าแรก</a>
                     </li>
                     <?php echo modules::run('adfrees/inc_header_category');?>
-                    <li class="dropdown danger">
-                    <a href="#"><i class="icon-leaf icon-white"></i> Pages</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="about.html">About us</a></li>
-                        <li><a href="services.html">Our services</a></li>
-                        <li><a href="pricingtable.html">Pricing table</a></li>
-                        <li><a href="faq.html">F.A.Q</a></li>
-                        <li><a href="fullwidth.html">Fullwidth</a></li>
-                        <li><a href="404.html">404</a></li>
-                    </ul>
-                    </li>
+                    <?php echo modules::run('contents/inc_header_category');?>
                     <li class="dropdown warning">
                     <a href="#"><i class="icon-camera icon-white"></i> Portfolio</a>
                     <ul class="dropdown-menu">

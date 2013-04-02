@@ -36,18 +36,16 @@
     </tbody>
 </table> -->
 
-<ul class="unstyled">
-<?php foreach($adfrees as $key=>$adfree):?>
-	<li class="pull-left">
-		<div class="span3">
-			<a href="adfrees/view/<?php echo $adfree->id?>">
-	            <?php if($adfree->image):?>
-	                <img class="img-polaroid" src="<?php echo $adfree->image?>" width="270" height="190">
-	            <?php else:?>
-	                <img class="img-polaroid" data-src="holder.js/270x190" alt="270x190" src="http://placehold.it/270x190">
-	            <?php endif;?>
-            </a>
-		</div>
-	</li>
-<?php endforeach;?>
-</ul>
+<div id="main" role="main">
+  <ul id="tiles">
+  	<?php foreach($adfrees as $key=>$adfree):?>
+  		<li>
+            <?php if($adfree->image):?>
+                <img src="<?php echo $adfree->image?>">
+            <?php else:?>
+                <img data-src="holder.js/270x190" alt="270x190" src="http://placehold.it/270x190">
+            <?php endif;?>
+		</li>
+	<?php endforeach;?>
+  </ul>
+</div>
