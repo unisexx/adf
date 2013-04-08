@@ -1,57 +1,24 @@
 <header>
 <!-- Navbar
 ================================================== -->
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
             <!-- logo -->
             <a class="brand logo" href="">
             <!-- <img src="assets/img/logo.png" alt=""> -->
-                <i class="icon-bullhorn icon-2x pull-left"></i>
-                <strong>Adfree</strong><br>ซื้อง่าย ขายคล่อง
+                <i class="icon-bullhorn pull-left"></i> Adfree
             </a>
-            <div class="head-member">
-            <?php if(is_login()):?>
-                <div class="btn-group pull-right">
-                  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                    <?php // echo thumb(avatar(user_login()->id),20,20,1,"")?> <i class="icon-user icon-white"></i> <?php echo user_login()->username ?>
-                    <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <!-- dropdown menu links -->
-                    <li><a href="myaccounts/profile"><i class="icon-pencil"></i> แก้ไขข้อมูล</a></li>
-                    <li><a href="myaccounts/adfree"><i class="icon-plus"></i> จัดการประกาศ</a></li>
-                    <li class="divider"></li>
-                    <li><a href="users/logout"><i class="icon-off"></i> ออกจากระบบ</a></li>
-                    <?php if(user_login()->level_id == '1'):?>
-                        <li class="divider"></li>
-                        <li><a href="admin" target="_blank"><i class="icon-home"></i> จัดการหลังบ้าน</a></li>
-                    <?php endif;?>
-                  </ul>
-                </div>
-            <?php else:?>
-                <form class="navbar-form pull-right" method="post" action="users/login">
-                  <input class="span2" type="text" name="username" placeholder="Username">
-                  <input class="span2" type="password" name="password" placeholder="Password">
-                  <button type="submit" class="btn btn-info">ล็อกอิน</button>
-                  <a class="btn btn-danger" href="users/forget_pass">ลืมรหัสผ่าน</a>
-                  <a class="btn btn-primary" href="users/register">สมัครสมาชิก</button></a>
-                  <!-- <a class="btn btn-success" href="users/register">สมัครสมาชิก</a> -->
-                </form>
-            <?php endif;?>
-            </div>
             
-            <!-- end logo -->
             <!-- top menu -->
-            <div>
                 <nav>
                 <ul class="nav topnav">
-                    <li class="dropdown success">
+                    <!-- <li class="dropdown success">
                         <a href=""><i class="icon-home icon-white"></i> หน้าแรก</a>
-                    </li>
+                    </li> -->
                     <?php echo modules::run('adfrees/inc_header_category');?>
                     <?php echo modules::run('contents/inc_header_category');?>
-                    <li class="dropdown warning">
+                    <!-- <li class="dropdown warning">
                     <a href="#"><i class="icon-camera icon-white"></i> Portfolio</a>
                     <ul class="dropdown-menu">
                         <li class="dropdown"><a href="#">Portfolio type 1</a>
@@ -80,7 +47,7 @@
                         <li><a href="post_left_sidebar.html">Post left sidebar</a></li>
                         <li><a href="post_right_sidebar.html">Post right sidebar</a></li>
                     </ul>
-                    </li>
+                    </li> -->
                     <!-- <?php if(is_login()):?>
                         <li class="dropdown inverse">
                         <a href="#"><i class="icon-user icon-white"></i> <?php echo user_login()->username ?></a>
@@ -103,8 +70,32 @@
                     <?php endif;?> -->
                 </ul>
                 </nav>
-            </div>
             <!-- end menu -->
+            
+            <ul class="nav pull-right">
+            <?php if(is_login()):?>
+                <div class="btn-group">
+                  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    <?php // echo thumb(avatar(user_login()->id),20,20,1,"")?> <i class="icon-user icon-white"></i> <?php echo user_login()->username ?>
+                    <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <!-- dropdown menu links -->
+                    <li><a href="myaccounts/profile"><i class="icon-pencil"></i> แก้ไขข้อมูล</a></li>
+                    <li><a href="myaccounts/adfree"><i class="icon-plus"></i> จัดการประกาศ</a></li>
+                    <li class="divider"></li>
+                    <li><a href="users/logout"><i class="icon-off"></i> ออกจากระบบ</a></li>
+                    <?php if(user_login()->level_id == '1'):?>
+                        <li class="divider"></li>
+                        <li><a href="admin" target="_blank"><i class="icon-home"></i> จัดการหลังบ้าน</a></li>
+                    <?php endif;?>
+                  </ul>
+                </div>
+            <?php else:?>
+                <li><a data-toggle="modal" href='#signin'>ล็อกอิน</a></li>
+                <li><a href="users/register"> สมัครสมาชิก</a></li>
+            <?php endif;?>
+            </ul>
         </div>
     </div>
 </div>

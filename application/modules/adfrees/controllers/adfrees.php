@@ -3,7 +3,7 @@ class Adfrees extends Public_Controller {
 
     function __construct()
     {
-        parent::__construct();  
+        parent::__construct();
     }
     
     function inc_home(){

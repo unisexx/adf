@@ -4,7 +4,7 @@
 </ul>
 
 <div class="row">
-    <div class="span4">
+    <div class="span3">
         <table class="table table-bordered table-hover">
             <tr><td><a href="adfrees/member/<?php echo $adfrees->user_id?>"><i class="icon-chevron-right"></i> ประกาศทั้งหมด (<?php echo $allcount->result_count();?>)</a></td></tr>
             <?php foreach($sub_categories as $sub_category):?>
@@ -17,10 +17,10 @@
             <?php endforeach;?>
         </table>
     </div>
-    <div class="span8">
+    <div class="span9">
         <ul class="thumbnails">
         <?php foreach($adfrees as $adfree):?>
-        <li class="span2">
+        <li class="span3">
             <a href="adfrees/view/<?php echo $adfree->id?>">
             <div class="thumbnail">
                 <?php if($adfree->image):?>
@@ -28,15 +28,18 @@
                 <?php else:?>
                     <img data-src="holder.js/300x200" alt="300x200" src="http://placehold.it/300x300">
                 <?php endif;?>
-                <div class="caption">
+                <div class="caption thumb-detail-block">
                     <h6><?php echo $adfree->title?></h6>
+                    <p><?php echo $adfree->adf_sub_category->title?></p>
+                    <p><i class="icon-map-marker"></i> <?php echo $adfree->user->amphur->amphur_name?> <?php echo $adfree->user->province->name?></p>
+                    <p><i class="icon-calendar"></i> <?php echo mysql_to_th($adfree->updated,'f',TRUE)?></p>
                     <div class="btn btn-mini btn-primary pull-right"><?php echo ($adfree->price)?$adfree->price.' บาท':'ไม่ระบุราคา'; ?></div>
                     <br clear="all">
                 </div>
             </div>
             </a>
         </li>
-        <?php echo alternator('','','','<br clear="all">')?>
+        <?php echo alternator('','','<br clear="all">')?>
         <?php endforeach;?>
         </ul>
     </div>

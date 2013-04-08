@@ -3,7 +3,7 @@ class Home extends Public_Controller {
 
 	function __construct()
 	{
-		parent::__construct();	
+		parent::__construct();
 	}
 	
 	function first_page()
@@ -17,10 +17,11 @@ class Home extends Public_Controller {
 		}
 	}
 	
-	function index(){
+	public function index(){
+        $this->template->set_layout('home');
 		$this->template->build('index');
 	}
-	
+    
 	function intro(){
 		$this->load->view('intro');
 	}

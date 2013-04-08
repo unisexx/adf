@@ -9,9 +9,7 @@
 </head>
 <body>
 	<?php include "_header.php";?>
-	<div class="container">
-      <?php echo $template['body'] ?>
-	</div>
+    <div class="container"><?php echo $template['body'] ?></div>
 	<?php include "_footer.php";?>
     <?php include "_script.php";?>
 </body>
