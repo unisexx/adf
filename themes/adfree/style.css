@@ -1,14 +1,126 @@
-body{padding-top: 90px; font-size: 13px!important;}
+body{padding-top: 60px; font-size: 13px!important;}
 a:hover{text-decoration:none;}
 .well-non{border:none !important; background-color: #fff !important;}
 
 /************ header ************/
-.navbar .brand{width:200px;}
+.head-member{text-align:right;}
 
+/************ jumbotron ************/
+.jumbotron, .jumbotron h1 {
+color: #fff;
+}
+.jumbotron {
+position: relative;
+margin-top: -20px;
+padding: 30px 0;
+color: #fff;
+text-align: center;
+/*text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);*/
+background: #020031;
+background: -moz-linear-gradient(45deg, #020031 0%, #6d3353 100%);
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#020031), color-stop(100%,#6d3353));
+background: -webkit-linear-gradient(45deg, #020031 0%,#6d3353 100%);
+background: -o-linear-gradient(45deg, #020031 0%,#6d3353 100%);
+background: -ms-linear-gradient(45deg, #020031 0%,#6d3353 100%);
+background: linear-gradient(45deg, #020031 0%,#6d3353 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020031', endColorstr='#6d3353',GradientType=1 );
+-webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+-moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+}
+.jumbotron .hero-content {
+text-align: center;
+}
+.jumbotron h1 {
+font-size: 80px;
+letter-spacing: -2px;
+line-height: 1;
+}
+.jumbotron p {
+margin-top: 15px;
+margin-bottom: 30px;
+font-size: 30px;
+line-height: 1.3;
+}
+.jumbotron .shameless-self-promotion {
+font-size: 12px;
+margin-top: 15px;
+color: #f1f1f1;
+opacity:0.9;
+text-shadow: none;
+}
+#iconCarousel {
+font-size: 280px;
+text-align: center;
+line-height: 285px;
+text-shadow: 2px 2px 3px #222;
+}
+#iconCarousel .carousel-control {
+top: 313px;
+width: 23px;
+height: 23px;
+border-width: 3px;
+font-size: 17px;
+line-height: 25px;
+left: 117px;
+}
+#iconCarousel .carousel-control.right {
+left: auto;
+right: 117px;
+}
+.carousel-control {
+position: absolute;
+top: 40%;
+left: 15px;
+width: 40px;
+height: 40px;
+margin-top: -20px;
+font-size: 60px;
+font-weight: 100;
+line-height: 30px;
+color: #fff;
+text-align: center;
+background: #222;
+border: 3px solid #fff;
+-webkit-border-radius: 23px;
+-moz-border-radius: 23px;
+border-radius: 23px;
+opacity: .5;
+filter: alpha(opacity=50);
+}
+.carousel-inner {
+position: relative;
+width: 100%;
+overflow: hidden;
+}
+
+#social-buttons {
+padding: 22px 0;
+text-align: center;
+background-color: #f5f5f5;
+border-top: 1px solid #fff;
+border-bottom: 1px solid #ddd;
+}
 /************ adfree search form ************/
 .dd-category a{color: #3074B9 !important; font-weight: bold !important;}
 .dd-category a:hover{color:#ffffff !important;}
 .dd-subcategory a{padding-left:30px !important;}
+
+.thumb-detail-block{text-align: center; position: relative;}
+.thumb-detail-block .price-on-img{
+    background:none repeat scroll 0 0 #333333;
+    opacity:0.9;
+    color:#fff !important;
+    text-align:right;
+    padding:0 5px 0 0;
+    position: absolute;
+    width: 195px;
+    top: -37px;
+    right: 0px;
+}
+.thumb-detail-block i{
+    color:#08c;
+}
 
 /************ footer ************/
 #footer-back-to-top.offscreen {
@@ -45,7 +157,6 @@ line-height:16px;
 label.error{color:red; font-style:italic;}
 
 /************ adfree ************/
-
 .btn-xlarge {
 width: 100%;
 text-align: center;
@@ -72,7 +183,7 @@ border-radius: 4px;
     border: 8px solid #d7d7d7;
     background:#fafafa;
     width: 0.00001%;
-    height: 480px;
+    height: 390px;
 }
 .wrapthumb {
     display: table-cell;
@@ -224,7 +335,6 @@ header .navbar-inverse .brand,
 header .navbar-inverse .nav > li > a {
     color: #ddd;
     text-shadow: none;
-    text-transform:uppercase;
 }
 
 header .navbar-inverse .navbar-inner li.active {
@@ -235,9 +345,9 @@ header nav {
     margin-right:-10px;
 }
 
-.navbar ul.topnav {
+/*.navbar ul.topnav {
     float:right;    
-}
+}*/
 
 .navbar .nav > li > a {
   float: none;
