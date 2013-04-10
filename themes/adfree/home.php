@@ -29,24 +29,7 @@
         <div class="span4">
           <div id="iconCarousel" class="carousel slide">
             <div class="carousel-inner">
-              <div class="item"><div><i class="icon-flag"></i></div></div>
-              <div class="item"><div><i class="icon-cloud-download"></i></div></div>
-              <div class="item"><div><i class="icon-lightbulb"></i></div></div>
-              <div class="item"><div><i class="icon-group"></i></div></div>
-              <div class="item"><div><i class="icon-ambulance"></i></div></div>
-              <div class="item"><div><i class="icon-star-empty"></i></div></div>
-              <div class="item"><div><i class="icon-envelope"></i></div></div>
-              <div class="item"><div><i class="icon-coffee"></i></div></div>
-              <div class="item"><div><i class="icon-medkit"></i></div></div>
-              <div class="item"><div><i class="icon-book"></i></div></div>
-              <div class="item"><div><i class="icon-fighter-jet"></i></div></div>
-              <div class="item active"><div><i class="icon-edit"></i></div></div>
-              <div class="item"><div><i class="icon-search"></i></div></div>
-              <div class="item"><div><i class="icon-beer"></i></div></div>
-              <div class="item"><div><i class="icon-quote-left"></i></div></div>
-              <div class="item"><div><i class="icon-stethoscope"></i></div></div>
-              <div class="item"><div><i class="icon-heart-empty"></i></div></div>
-              <div class="item"><div><i class="icon-thumbs-up"></i></div></div>
+                <?php echo modules::run('adfrees/inc_jumbotron_category'); ?>
             </div>
     
             <a class="carousel-control left" href="#iconCarousel" data-slide="prev">

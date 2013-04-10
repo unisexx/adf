@@ -16,6 +16,12 @@ class Adfrees extends Public_Controller {
         $this->load->view('inc_home',$data);
     }
     
+    function inc_jumbotron_category(){
+        $data['categories'] = new Adf_category();
+        $data['categories']->where('status','approve')->order_by('orderlist','asc')->get();
+        $this->load->view('inc_jumbotron_category',$data);
+    }
+    
     function inc_home_category(){
         $data['adf_categories'] = new Adf_category();
         $data['adf_categories']->where('status','approve')->order_by('orderlist','asc')->get();

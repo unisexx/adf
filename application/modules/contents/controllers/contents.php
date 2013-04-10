@@ -22,7 +22,7 @@ class Contents extends Public_Controller
 	
 	function inc_header_category(){
 		$data['categories'] = new Category();
-		$data['categories']->where("module = 'articles' and parents != 0")->order_by('id','desc')->get();
+		$data['categories']->where("module = 'articles' and parents != 0")->order_by('id','asc')->get();
 		$this->load->view('inc_header_category',$data);
 	}
 	

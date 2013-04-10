@@ -1,16 +1,20 @@
 <div class="row">
     <div class="span3">
         <div class="accordion" id="accordion2">
-          <?php foreach($categories as $key=>$category):?>
+          <?php foreach($categories as $category):?>
               <div class="accordion-group">
                 <div class="accordion-heading">
-                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse_<?php echo $key?>">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse_<?php echo $category->id?>">
                     <?php echo $category->name?>
                   </a>
                 </div>
-                <div id="collapse_<?php echo $key?>" class="accordion-body collapse in">
+                <div id="collapse_<?php echo $category->id?>" class="accordion-body collapse <?php echo $category->id == $content->category->id ?"in":"";?>">
                   <div class="accordion-inner">
-                    Anim pariatur cliche...
+                    <ul>
+                    <?php foreach($category->content->get() as $content):?>
+                        <li><a href="contents/view/articles/<?php echo $content->id?>"><?php echo $content->title?></a></li>
+                    <?php endforeach;?>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -18,9 +22,8 @@
          </div>
     </div>
     <div class="span9">
-        <ul class="breadcrumb">
-          <li><a href="home">หน้าแรก</a> <span class="divider">/</span></li>
-          <li class="muted"><?php echo $content->category->name?> <span class="divider">/</span></li>
+        <ul class="breadcrumb mywizard">
+          <li><a href="home">หน้าแรก</a></li>
           <li class="active"><?=$content->title?></li>
         </ul>
         <h1><?=lang_decode($content->title)?></h1>
