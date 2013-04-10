@@ -19,7 +19,7 @@ if ( ! function_exists('mysql_to_th'))
 
 		if($time)
 		{
-				$r .= ' - '.date('H', $datetime).':'.date('i', $datetime);
+				$r .= ' - '.date('H', $datetime).':'.date('i', $datetime).' น.';
 		}
 	
 		return $r;
