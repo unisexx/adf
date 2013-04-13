@@ -1,6 +1,6 @@
 <?php include("_tabmenu.php")?>
 <div class="alert alert-info">
-    ข้อมูลการติดต่อจะแสดงในทุกการประกาศของคุณ เพื่อความสะดวกในการติดต่อจากบุคคลอื่นกรุณากรอกข้อมูลตามความเป็นจริงให้ครบถ้วน
+    <i class="icon-info-sign"></i> ข้อมูลการติดต่อจะแสดงในทุกการประกาศของคุณ เพื่อความสะดวกในการติดต่อจากบุคคลอื่นกรุณากรอกข้อมูลตามความเป็นจริงให้ครบถ้วน
 </div>
 
 <form class="form-horizontal validate" method="post" action="myaccounts/profile_save">

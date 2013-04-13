@@ -25,7 +25,6 @@
 			<th>ลำดับ</th>
 		<?php endif;?>
 		<th>หัวข้อ</th>
-		<th>โดย</th>
 		<?php if($type == 'articles'):?>
         <th><a rel="lightbox" class="btn btn-mini" href="categories/admin/categories/<?=$type?>?iframe=true&width=90%&height=90%">หมวดหมู่</a></th>
         <?php endif;?>
@@ -41,7 +40,6 @@
 			<td><input type="text" name="orderlist[]" size="1" value="<?php echo $row->orderlist?>"><input type="hidden" name="orderid[]" value="<?php echo $row->id ?>"></td>
 		<?php endif;?>
 		<td><?php echo $row->title?></td>
-		<td><?php echo $row->user->display?></td>
 		<?php if($type == 'articles'):?>
         <td><?php echo anchor('contents/admin/contents/index/'.$type.'?category_id='.$row->category_id,$row->category->name) ?></td>
         <?php endif;?>

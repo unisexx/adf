@@ -1,9 +1,9 @@
 <div class="row">
     <div class="span8">
-        <ul class="breadcrumb mywizard">
-            <li><a href="home">หน้าแรก</a></li>
-            <li><a href="adfrees/c/<?php echo $adfree->adf_category->slug?>"><?php echo $adfree->adf_category->title?></a></li>
-            <li><a href="adfrees/s/<?php echo $adfree->adf_sub_category->slug?>"><?php echo $adfree->adf_sub_category->title?></a></li>
+        <ul class="breadcrumb">
+            <li><a href="home">หน้าแรก</a> <span class="divider">/</span></li>
+            <li><a href="adfrees/c/<?php echo $adfree->adf_category->slug?>"><?php echo $adfree->adf_category->title?></a> <span class="divider">/</span></li>
+            <li><a href="adfrees/s/<?php echo $adfree->adf_sub_category->slug?>"><?php echo $adfree->adf_sub_category->title?></a> <span class="divider">/</span></li>
             <li class="active"><?php echo $adfree->title?></li>
         </ul>
 
@@ -70,35 +70,35 @@
             </tr>
             <tr>
                 <th></th>
-                <td><a href="" class="pull-right btn btn-small btn-success">ดูสินค้าอื่นๆของ <?php echo $adfree->user->username?></a></td>
+                <td><a href="adfrees/member/<?php echo $adfree->user_id?>" class="pull-right btn btn-small btn-success">ดูสินค้าอื่นๆของ <?php echo $adfree->user->username?></a></td>
             </tr>
         </table>
     </div>
-    <div class="span8">
+    <div class="span12">
 		<h3>ประกาศอัพเดทล่าสุดของ <?php echo $adfree->user->username?></h3>
-		<div class="row-fluid">
-            <ul class="thumbnails">
-            <?php foreach($adfrees as $adfree):?>
-        	<li class="span3">
-        	    <a href="adfrees/view/<?php echo $adfree->id?>">
-				<div class="thumbnail">
-				    <?php if($adfree->image):?>
-				        <img src="<?php echo $adfree->image?>">
-				    <?php else:?>
-				        <img data-src="holder.js/300x200" alt="300x200" src="http://placehold.it/300x300">
-				    <?php endif;?>
-					<div class="caption">
-						<h6><?php echo $adfree->title?></h6>
-						<div class="btn btn-mini btn-primary pull-right"><?php echo ($adfree->price)?$adfree->price.' บาท':'ไม่ระบุราคา'; ?></div>
-						<br clear="all">
-					</div>
-				</div>
-				</a>
-			</li>
-            <?php endforeach;?>
-			</ul>
-			<a href="adfrees/member/<?php echo $adfree->user_id?>" class="pull-right btn btn-small btn-success">ดูสินค้าอื่นๆของ <?php echo $adfree->user->username?></a>
-		</div>
+		<ul class="thumbnails">
+    <?php foreach($adfrees as $adfree):?>
+    <li class="span3">
+        <a href="adfrees/view/<?php echo $adfree->id?>">
+        <div class="thumbnail">
+            <?php if($adfree->image):?>
+                <img src="<?php echo $adfree->image?>">
+            <?php else:?>
+                <img data-src="holder.js/300x200" alt="300x200" src="http://placehold.it/300x300">
+            <?php endif;?>
+            <div class="caption thumb-detail-block">
+                <h6><?php echo $adfree->title?></h6>
+                <p><?php echo $adfree->adf_sub_category->title?></p>
+                <p><i class="icon-map-marker"></i> <?php echo $adfree->user->amphur->amphur_name?> <?php echo $adfree->user->province->name?></p>
+                <p><i class="icon-calendar"></i> <?php echo mysql_to_th($adfree->updated,'f',TRUE)?></p>
+                <div class="btn btn-mini btn-primary pull-right"><?php echo ($adfree->price)?$adfree->price.' บาท':'ไม่ระบุราคา'; ?></div>
+                <br clear="all">
+            </div>
+        </div>
+        </a>
+    </li>
+    <?php endforeach;?>
+</ul>
 		
 	</div>
 </div>

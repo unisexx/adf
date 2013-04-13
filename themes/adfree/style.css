@@ -124,6 +124,9 @@ border-bottom: 1px solid #ddd;
     color:#08c;
 }
 
+/************ contents ************/
+.accordion-heading .accordion-toggle {background:#F1F1F1;}
+
 /************ footer ************/
 #footer-back-to-top.offscreen {
 bottom: -100px;

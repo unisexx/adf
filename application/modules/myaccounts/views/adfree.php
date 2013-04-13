@@ -1,13 +1,13 @@
 <?php include("_tabmenu.php")?>
 
-<form class="form-inline well" method="get" action="myaccounts/adfree">
+<!-- <form class="form-inline well" method="get" action="myaccounts/adfree">
     <?php // echo form_dropdown('adf_want_id',get_option('id','title','adf_wants'),@$_GET['adf_want_id'],'','--- ความต้องการ ---') ?>
     <?php echo form_dropdown('adf_category_id',get_option('id','title','adf_categories'),@$_GET['adf_category_id'],'','--- หมวดหมู่ประกาศหลัก ---') ?>
     <?php echo form_dropdown('adf_sub_category_id',get_option('id','title','adf_sub_categories'),@$_GET['adf_sub_category_id'],'','--- หมวดหมู่ประกาศย่อย ---') ?>
     <?php echo form_dropdown('province_id',get_option('id','name','provinces'),@$_GET['province_id'],'','--- ทุกจังหวัด ---') ?>
     <input type="text" name="title" placeholder="คำค้นหา" value="<?php echo @$_GET['title']?>">
     <input type="submit" class="btn" value="ค้นหา">
-</form>
+</form> -->
 
 <table class="table table-hover">
     <thead>

@@ -1,5 +1,5 @@
-<ul class="breadcrumb mywizard">
-  <li><a href="home">หน้าแรก</a></li>
+<ul class="breadcrumb">
+  <li><a href="home">หน้าแรก</a> <span class="divider">/</span></li>
   <li class="active">ลืมรหัสผ่าน</li>
 </ul>
 

@@ -11,8 +11,8 @@
                 <div id="collapse_<?php echo $category->id?>" class="accordion-body collapse <?php echo $category->id == $content->category->id ?"in":"";?>">
                   <div class="accordion-inner">
                     <ul>
-                    <?php foreach($category->content->get() as $content):?>
-                        <li><a href="contents/view/articles/<?php echo $content->id?>"><?php echo $content->title?></a></li>
+                    <?php foreach($category->content->get() as $content_title):?>
+                        <li><a href="contents/view/articles/<?php echo $content_title->id?>"><?php echo $content_title->title?></a></li>
                     <?php endforeach;?>
                     </ul>
                   </div>
@@ -22,12 +22,11 @@
          </div>
     </div>
     <div class="span9">
-        <ul class="breadcrumb mywizard">
-          <li><a href="home">หน้าแรก</a></li>
+        <ul class="breadcrumb">
+          <li><a href="home">หน้าแรก</a> <span class="divider">/</span></li>
           <li class="active"><?=$content->title?></li>
         </ul>
-        <h1><?=lang_decode($content->title)?></h1>
-        <!-- <div style="text-align: center; margin:15px auto;"><img src="uploads/content/<?=$content->image?>"></div> -->
-        <div><?=$content->detail?></div>
+        <h1><?php echo $content->title?></h1>
+        <div><?php echo $content->detail?></div>
     </div>
 </div>

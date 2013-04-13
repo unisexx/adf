@@ -16,6 +16,7 @@ class Users extends Public_Controller{
         	$captcha = $this->session->userdata('captcha');
 			if(($_POST['captcha'] == $captcha) && !empty($captcha)){
 			    $_POST['password'] = encrypt_pass($_POST['password']);
+				$_POST['ip'] = $_SERVER['REMOTE_ADDR'];
 	            $user = new User();
 	            $user->from_array($_POST);
 	            $user->save();
