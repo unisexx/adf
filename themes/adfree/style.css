@@ -120,7 +120,7 @@ border-bottom: 1px solid #ddd;
     top: -37px;
     right: 0px;
 }
-.thumb-detail-block i{
+.thumb-detail-block i,.userpost-detail i{
     color:#08c;
 }
 
@@ -162,6 +162,10 @@ line-height:16px;
 label.error{color:red; font-style:italic;}
 
 /************ adfree ************/
+.facebookIcon{color:#3B5998 !important;}
+.twitterIcon{color:#00ABF0 !important;}
+.googleplusIcon{color:#BE3628 !important;}
+
 .btn-xlarge {
 width: 100%;
 text-align: center;

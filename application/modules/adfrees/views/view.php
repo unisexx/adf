@@ -35,38 +35,34 @@
             <?php echo ($adfree->price)?$adfree->price.' บาท':'ไม่ระบุราคา'; ?>
         </div>
         <h3>รายละเอียดผู้ประกาศ</h3>
-        <table class="table">
+        <table class="table userpost-detail">
             <tr>
-                <th>ชื่อ</th>
+                <th><i class="icon-user"></i> ชื่อ</th>
                 <td><?php echo $adfree->user->username?></td>
             </tr>
             <tr>
-                <th>ที่ตั้ง</th>
+                <th><i class="icon-map-marker"></i> ที่ตั้ง</th>
                 <td>อ.<?php echo $adfree->user->amphur->amphur_name?> จ.<?php echo $adfree->user->province->name?></td>
             </tr>
             <tr>
-                <th>เบอร์โทรศัพท์</th>
+                <th><i class="icon-phone"></i> เบอร์โทรศัพท์</th>
                 <td><?php echo $adfree->user->phone?></td>
             </tr>
             <tr>
-                <th>อีเมล์</th>
+                <th><i class="icon-envelope"></i> อีเมล์</th>
                 <td><?php echo $adfree->user->email?></td>
             </tr>
             <tr>
-                <th>facebook</th>
-                <td><?php echo $adfree->user->facebook?></td>
-            </tr>
-            <tr>
-                <th>twitter</th>
-                <td><?php echo $adfree->user->twitter?></td>
-            </tr>
-            <tr>
-                <th>google+</th>
-                <td><?php echo $adfree->user->googleplus?></td>
-            </tr>
-            <tr>
-                <th>other</th>
+                <th><i class="icon-bookmark"></i> other</th>
                 <td><?php echo $adfree->user->other?></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                	<?php echo $adfree->user->facebook?'<a href="'.$adfree->user->facebook.'" target="_blank"><i class="icon-facebook-sign icon-2x facebookIcon"></i></a>':'';?>
+                	<?php echo $adfree->user->twitter?'<a href="'.$adfree->user->twitter.'" target="_blank"><i class="icon-twitter-sign icon-2x twitterIcon"></i></a>':'';?>
+                	<?php echo $adfree->user->googleplus?'<a href="'.$adfree->user->googleplus.'" target="_blank"><i class="icon-google-plus-sign icon-2x googleplusIcon"></i></a>':'';?>
+                </td>
             </tr>
             <tr>
                 <th></th>

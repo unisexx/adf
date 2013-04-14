@@ -12,7 +12,7 @@
                 <address> -->
                 <h1 style="font-size:13px; line-height: normal"><strong>Adfree</strong> - แอดฟรี ฟรีโพสต์ ฟรีประกาศ ซื้อ-ขายสินค้า ตลาดออนไลน์ โปรโมทสินค้าฟรี ลงโฆษณาฟรี</h1><br>
                 <strong>ติดต่อเรา</strong><br>
-                <a href="mailto:#">hello@websitename.com</a>
+                <a href="mailto:kpoplover.info@gmail.com">kpoplover.info@gmail.com</a>
                 </address>
             </div>
         </div>
@@ -67,7 +67,7 @@
             </div>
             <div class="span6">
                 <p class="pull-right">
-                    Designed by <a href="#">iWebStudio</a>
+                    Designed by <a href="http://www.kpoplover.com">Kpoplover</a>
                 </p>
             </div>
         </div>
