@@ -8,7 +8,7 @@
         </ul>
 
         <h1><?php echo $adfree->title?></h1>
-        <span class="badge badge-warning"><?php echo mysql_to_th($adfree->updated,'S',true)?> น.</span>
+        <span class="badge badge-warning"><?php echo mysql_to_th($adfree->updated,'S',true)?></span>
         <span class="badge badge-info">ความต้องการ : <?php echo $adfree->adf_want->title?></span>
         <span class="badge badge-important">สภาพสินค้า : <?php echo $adfree->adf_type->title?></span>
         <div class="loading-blk"><img class="loading" src="media/images/ajax-loader.gif"></div>
@@ -32,7 +32,7 @@
     
     <div class="span4">
         <div class="btn btn-xlarge btn-primary">
-            <?php echo ($adfree->price)?$adfree->price.' บาท':'ไม่ระบุราคา'; ?>
+            <?php echo ($adfree->price)?number_format($adfree->price).' บาท':'ไม่ระบุราคา'; ?>
         </div>
         <h3>รายละเอียดผู้ประกาศ</h3>
         <table class="table userpost-detail">
@@ -84,10 +84,12 @@
             <?php endif;?>
             <div class="caption thumb-detail-block">
                 <h6><?php echo $adfree->title?></h6>
-                <p><?php echo $adfree->adf_sub_category->title?></p>
-                <p><i class="icon-map-marker"></i> <?php echo $adfree->user->amphur->amphur_name?> <?php echo $adfree->user->province->name?></p>
+                <p><i class="<?php echo $adfree->adf_category->icon?>"></i> <?php echo $adfree->adf_sub_category->title?></p>
+                <?php if($adfree->user->amphur->amphur_name != '' or $adfree->user->province->name != ''):?>
+                    <p><i class="icon-map-marker"></i> <?php echo $adfree->user->amphur->amphur_name?> <?php echo $adfree->user->province->name?></p>
+                <?php endif;?>
                 <p><i class="icon-calendar"></i> <?php echo mysql_to_th($adfree->updated,'f',TRUE)?></p>
-                <div class="btn btn-mini btn-primary pull-right"><?php echo ($adfree->price)?$adfree->price.' บาท':'ไม่ระบุราคา'; ?></div>
+                <div class="btn btn-mini btn-primary pull-right"><?php echo ($adfree->price)?number_format($adfree->price).' บาท':'ไม่ระบุราคา'; ?></div>
                 <br clear="all">
             </div>
         </div>
