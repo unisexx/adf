@@ -12,7 +12,7 @@ class Adfrees extends Public_Controller {
         if(@$_GET['adf_category_id'])$data['adfrees']->where('adf_category_id',$_GET['adf_category_id']);
         if(@$_GET['adf_sub_category_id'])$data['adfrees']->where("adf_sub_category_id = ".$_GET['adf_sub_category_id']);
         if(@$_GET['province_id'])$data['adfrees']->where_related('users', 'province_id', $_GET['province_id']);
-        $data['adfrees']->order_by('updated','desc')->get(10);
+        $data['adfrees']->order_by('updated','desc')->get_page();
         $this->load->view('inc_home',$data);
     }
     
@@ -76,7 +76,7 @@ class Adfrees extends Public_Controller {
         $data['attachs']->where("module = 'adfrees' and content_id = ".$id)->order_by('id','asc')->get();
         
 		$data['adfrees'] = new Adfree();
-		$data['adfrees']->where('user_id = '.$data['adfree']->user_id)->order_by('updated desc')->get(4);
+		$data['adfrees']->where('user_id = '.$data['adfree']->user_id)->order_by('updated desc')->get(6);
 		
         $this->template->build('view',$data);
     }

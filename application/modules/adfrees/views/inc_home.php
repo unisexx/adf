@@ -50,7 +50,7 @@
             <?php if($adfree->image):?>
                 <img src="<?php echo $adfree->image?>">
             <?php else:?>
-                <img data-src="holder.js/300x200" alt="300x200" src="http://placehold.it/300x300">
+                <img data-src="holder.js/300x300" alt="<?php echo $adfree->title?>" src="http://placehold.it/300x300">
             <?php endif;?>
             <div class="caption thumb-detail-block">
                 <h6><?php echo $adfree->title?></h6>
@@ -65,5 +65,6 @@
         </div>
         </a>
     </li>
+    <?php echo alternator('', '', '', '<br clear="all">');?>
     <?php endforeach;?>
 </ul>

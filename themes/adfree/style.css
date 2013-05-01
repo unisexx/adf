@@ -159,6 +159,7 @@ line-height:16px;
 #footer-back-to-top:hover{text-decoration:none;}
 
 /************ form ************/
+.txtred{color:red;}
 label.error{color:red; font-style:italic;}
 
 /************ adfree ************/

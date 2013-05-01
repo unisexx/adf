@@ -12,8 +12,13 @@
         <span class="badge badge-info">ความต้องการ : <?php echo $adfree->adf_want->title?></span>
         <span class="badge badge-important">สภาพสินค้า : <?php echo $adfree->adf_type->title?></span>
         <div class="loading-blk"><img class="loading" src="media/images/ajax-loader.gif"></div>
+        
         <div class="wraptocenter"><span></span>
-            <img src="<?php echo $attach->url?>" alt="<?php echo $adfree->title?>">
+            <?php if($attach->url):?>
+                <img src="<?php echo $attach->url?>" alt="<?php echo $adfree->title?>">
+            <?php else:?>
+                <img data-src="holder.js/300x300" alt="<?php echo $adfree->title?>" src="http://placehold.it/300x300">
+            <?php endif;?>
         </div>
         <div class="row thumbrow">
         <?php foreach($attachs as $attach):?>
@@ -23,6 +28,7 @@
             </div>
         <?php endforeach;?>
         </div>
+        
         <hr>
         <div>
             <h2>รายละเอียดสินค้า</h2>
@@ -40,22 +46,31 @@
                 <th><i class="icon-user"></i> ชื่อ</th>
                 <td><?php echo $adfree->user->username?></td>
             </tr>
+            <?php if($adfree->user->amphur->amphur_name != '' or $adfree->user->province->name != ''):?>
             <tr>
                 <th><i class="icon-map-marker"></i> ที่ตั้ง</th>
                 <td>อ.<?php echo $adfree->user->amphur->amphur_name?> จ.<?php echo $adfree->user->province->name?></td>
             </tr>
+            <?php endif;?>
+            <?php if($adfree->user->phone):?>
             <tr>
                 <th><i class="icon-phone"></i> เบอร์โทรศัพท์</th>
                 <td><?php echo $adfree->user->phone?></td>
             </tr>
+            <?php endif;?>
+            <?php if($adfree->user->email):?>
             <tr>
                 <th><i class="icon-envelope"></i> อีเมล์</th>
                 <td><?php echo $adfree->user->email?></td>
             </tr>
+            <?php endif;?>
+            <?php if($adfree->user->other):?>
             <tr>
                 <th><i class="icon-bookmark"></i> other</th>
                 <td><?php echo $adfree->user->other?></td>
             </tr>
+            <?php endif;?>
+            <?php if($adfree->user->facebook != '' or $adfree->user->twitter != '' or $adfree->user->googleplus):?>
             <tr>
                 <th></th>
                 <td>
@@ -64,6 +79,7 @@
                 	<?php echo $adfree->user->googleplus?'<a href="'.$adfree->user->googleplus.'" target="_blank"><i class="icon-google-plus-sign icon-2x googleplusIcon"></i></a>':'';?>
                 </td>
             </tr>
+            <?php endif;?>
             <tr>
                 <th></th>
                 <td><a href="adfrees/member/<?php echo $adfree->user_id?>" class="pull-right btn btn-small btn-success">ดูสินค้าอื่นๆของ <?php echo $adfree->user->username?></a></td>
@@ -89,12 +105,13 @@
                     <p><i class="icon-map-marker"></i> <?php echo $adfree->user->amphur->amphur_name?> <?php echo $adfree->user->province->name?></p>
                 <?php endif;?>
                 <p><i class="icon-calendar"></i> <?php echo mysql_to_th($adfree->updated,'f',TRUE)?></p>
-                <div class="btn btn-mini btn-primary pull-right"><?php echo ($adfree->price)?number_format($adfree->price).' บาท':'ไม่ระบุราคา'; ?></div>
+                <div class="btn btn-mini btn-primary pull-right"><?php echo ($adfree->price)?number_format($adfree->price).' บาท':'ไม่ระบุราคา'; ?></div>
                 <br clear="all">
             </div>
         </div>
         </a>
     </li>
+    <?php echo alternator('', '', '<br clear="all">');?>
     <?php endforeach;?>
 </ul>
 		

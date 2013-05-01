@@ -3,27 +3,27 @@
     <i class="icon-info-sign"></i> การอัพเดทประกาศจะทำให้ประกาศของคุณถูกดันขึ้นมาอยู่ด้านบนสุด ดังนั้นควรอัพเดทประกาศของคุณอยู่สม่ำเสมอ
 </div>
 
-<form id="notice" class="form-horizontal" method="post" action="myaccounts/adfree_save/<?php echo $adfree->id?>">
+<form id="notice" class="form-horizontal validate" method="post" action="myaccounts/adfree_save/<?php echo $adfree->id?>">
     <div class="control-group">
-        <label class="control-label" for="name">ความต้องการ</label>
+        <label class="control-label" for="name">ความต้องการ <span class='txtred'>*</span></label>
         <div class="controls">
             <?php echo form_dropdown('adf_want_id',get_option('id','title','adf_wants'),$adfree->adf_want_id,'','--- เลือกความต้องการ ---') ?>
         </div>
     </div>
     <div class="control-group">
-        <label class="control-label" for="name">สภาพสินค้า</label>
+        <label class="control-label" for="name">สภาพสินค้า <span class='txtred'>*</span></label>
         <div class="controls">
             <?php echo form_dropdown('adf_type_id',get_option('id','title','adf_types'),$adfree->adf_type_id,'','--- เลือกสภาพสินค้า ---') ?>
         </div>
     </div>
     <div class="control-group">
-        <label class="control-label" for="name">หมวดหมู่ประกาศหลัก</label>
+        <label class="control-label" for="name">หมวดหมู่ประกาศหลัก <span class='txtred'>*</span></label>
         <div class="controls">
             <?php echo form_dropdown('adf_category_id',get_option('id','title','adf_categories'),$adfree->adf_category_id,'','--- เลือกหมวดหมู่ประกาศหลัก ---') ?>
         </div>
     </div>
     <div class="control-group">
-        <label class="control-label" for="name">หมวดหมู่ย่อย</label>
+        <label class="control-label" for="name">หมวดหมู่ย่อย <span class='txtred'>*</span></label>
         <div class="controls sub_category">
             <?php if($adfree->adf_sub_category_id):?>
             <?php echo form_dropdown('adf_sub_category_id',get_option('id','title','adf_sub_categories where adf_category_id = '.$adfree->adf_category_id),$adfree->adf_sub_category_id,'','--- เลือกหมวดหมู่ประกาศย่อย ---') ?>
@@ -31,7 +31,7 @@
         </div>
     </div>
   <div class="control-group">
-    <label class="control-label" for="name">หัวข้อ</label>
+    <label class="control-label" for="name">หัวข้อ <span class='txtred'>*</span></label>
     <div class="controls">
       <input type="text" id="name" name="title" class="span5" value="<?php echo $adfree->title?>">
     </div>

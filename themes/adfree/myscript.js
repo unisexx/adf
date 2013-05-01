@@ -116,6 +116,14 @@ $(document).ready(function(){
 		{ 
 			required: true
 		},
+		adf_type_id: 
+		{ 
+			required: true
+		},
+		title: 
+		{ 
+			required: true
+		},
 		captcha:
 		{
 			required: true,
@@ -156,6 +164,14 @@ $(document).ready(function(){
 		adf_sub_category_id: 
 		{ 
 			required: "กรุณาเลือกหมวดหมู่ย่อย"
+		},
+		adf_type_id: 
+		{ 
+			required: "กรุณาเลือกสภาพสินค้า"
+		},
+		title: 
+		{ 
+			required: "กรุณากรอกหัวข้อ"
 		},
 		captcha:
 		{
