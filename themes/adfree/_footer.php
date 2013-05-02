@@ -10,7 +10,7 @@
                  Jakarta, Indonesia 14210<br>
                 <abbr title="Phone">P:</abbr> (123) 456-7890 </address>
                 <address> -->
-                <h1 style="font-size:13px; line-height: normal"><strong>Adfree</strong> - แอดฟรี ฟรีโพสต์ ฟรีประกาศ ซื้อ-ขายสินค้า ตลาดออนไลน์ โปรโมทสินค้าฟรี ลงโฆษณาฟรี</h1><br>
+                <h2 style="font-size:13px !important; line-height: normal;"><strong>Adfree</strong> - แอดฟรี ฟรีโพสต์ ฟรีประกาศ ซื้อ-ขายสินค้า ตลาดออนไลน์ โปรโมทสินค้าฟรี ลงโฆษณาฟรี</h2><br>
                 <strong>ติดต่อเรา</strong><br>
                 <a href="mailto:kpoplover.info@gmail.com">kpoplover.info@gmail.com</a>
                 </address>

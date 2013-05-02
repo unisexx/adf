@@ -15,8 +15,7 @@
       <div class="row">
         <div class="span8">
           <div class="hero-content">
-            <h1>Adfree</h1>
-            <p>ฟรีโพสต์ ฟรีประกาศ ซื้อ-ขายสินค้า ตลาดออนไลน์ โปรโมทสินค้าฟรี ลงโฆษณาฟรี</p>
+            <h1>Adfree <p>ฟรีโพสต์ ฟรีประกาศ ซื้อ-ขายสินค้า ตลาดออนไลน์ โปรโมทสินค้าฟรี ลงโฆษณาฟรี</p></h1>
             <div class="actions">
               <a class="btn btn-primary btn-large" href="users/register">
                 <i class="icon-user icon-2x pull-left"></i> สมัครสมาชิกเพื่อ<br>ลงประกาศฟรี</a>
