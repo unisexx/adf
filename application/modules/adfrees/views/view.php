@@ -11,7 +11,7 @@
         <span class="badge badge-warning"><?php echo mysql_to_th($adfree->updated,'S',true)?></span>
         <span class="badge badge-info">ความต้องการ : <?php echo $adfree->adf_want->title?></span>
         <span class="badge badge-important">สภาพสินค้า : <?php echo $adfree->adf_type->title?></span>
-        <div class="loading-blk"><img class="loading" src="media/images/ajax-loader.gif"></div>
+		<div class="loading-blk"><img class="loading" src="media/images/ajax-loader.gif"></div>
         
         <div class="wraptocenter"><span></span>
             <?php if($attach->url):?>
@@ -32,7 +32,9 @@
         <hr>
         <div>
             <h3>รายละเอียดสินค้า</h3>
-            <div><?php echo $adfree->detail?></div>
+            <div>
+            	<?php echo $adfree->detail?>
+            </div>
         </div>
     </div>
     
