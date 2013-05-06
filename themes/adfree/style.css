@@ -109,6 +109,20 @@ border-top: 1px solid #fff;
 border-bottom: 1px solid #ddd;
 }
 /************ adfree search form ************/
+.thumbnail > img {
+    display: block;
+    height: 210px; /* add this */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+.thumb-detail-block .btn{
+    position:absolute;
+    bottom:5px;
+    right: 5px;
+}
+
 .dd-category a{color: #3074B9 !important; font-weight: bold !important;}
 .dd-category a:hover{color:#ffffff !important;}
 .dd-subcategory a{padding-left:30px !important;}
@@ -171,6 +185,22 @@ label.error{color:red; font-style:italic;}
 .facebookIcon{color:#3B5998 !important;}
 .twitterIcon{color:#00ABF0 !important;}
 .googleplusIcon{color:#BE3628 !important;}
+
+.wrapthumb > img {
+    display: block;
+    height: 60px; /* add this */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+.wraptocenter > img{
+    display: block;
+    max-height: 390px; /* add this */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
 
 .btn-xlarge {
 width: 100%;

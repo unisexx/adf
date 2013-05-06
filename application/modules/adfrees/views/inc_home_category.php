@@ -10,6 +10,6 @@
         <?php endforeach;?>
     </div>
 </div>
-<?php echo alternator('<br clear="all">','')?>
+<?php echo alternator('','<br clear="all">')?>
 <?php endforeach;?>
 </div>

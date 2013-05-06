@@ -1,5 +1,4 @@
 <h3>ประกาศล่าสุด</h3>
-
 <ul class="thumbnails">
     <?php foreach($adfrees as $adfree):?>
     <li class="span3">
@@ -23,6 +22,5 @@
         </div>
         </a>
     </li>
-    <?php echo alternator('', '', '', '<br clear="all">');?>
     <?php endforeach;?>
 </ul>
