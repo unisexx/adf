@@ -3,6 +3,7 @@
 <script type="text/javascript" src="media/tiny_mce/config.js"></script>
 <script type="text/javascript" src="media/bootstrap/js/bootstrap.js"></script>
 <script type="text/javascript" src="media/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="media/js/jquery.chainedSelect.min.js"></script>
 <script type="text/javascript" src="themes/admin/media/js/default.js"></script>
 <?php echo js_lightbox(); ?>
 <?php echo js_checkbox('approve'); ?>

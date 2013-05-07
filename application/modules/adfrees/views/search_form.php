@@ -1,4 +1,4 @@
-<form class="form-inline well" method="get" action="adfrees"> 
+<form class="form-inline well" method="get" action=""> 
     <div class="input-append">
       <input class="input-medium" id="categoryInput" type="text" name="category" placeholder="หมวดหมู่" value="<?php echo @$_GET['category']?>">
       <div class="btn-group">

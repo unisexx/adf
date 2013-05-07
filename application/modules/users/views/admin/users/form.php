@@ -29,16 +29,14 @@
   <div class="control-group">
     <label class="control-label" for="province">จังหวัด</label>
     <div class="controls">
-      <?php echo form_dropdown('province_id',get_option('id','name','provinces'),$user->province_id,'class="span5"','--- เลือกจังหวัด ---') ?>
+      <?php echo form_dropdown('province_id',get_option('id','name','provinces'),$user->province_id,'id="province_id" class="span5"','--- เลือกจังหวัด ---') ?>
     </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="province" class="span5">อำเภอ</label>
     <div id="amphur" class="controls">
        <?php
-            if($user->amphur_id){
-                echo form_dropdown('amphur_id',get_option('id','amphur_name','amphures where province_id ='.$user->province_id),$user->amphur_id,'class="span5"','--- เลือกอำเภอ ---');
-            }
+			echo form_dropdown('amphur_id',(empty($user->province_id)) ? array() : get_option('id','amphur_name','amphures where province_id ='.$user->province_id),$user->amphur_id,'id="amphur_id" class="span5"','--- เลือกอำเภอ ---');
        ?>
     </div>
   </div>

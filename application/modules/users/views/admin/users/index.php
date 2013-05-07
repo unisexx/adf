@@ -22,7 +22,7 @@
 		<!--<td><?php echo $user->level->level?></td>-->
         <td><?php echo mysql_to_th($user->created,'S',TRUE) ?></td>
 		<td>
-			<?php echo anchor('users/admin/users/form/'.$user->id,'แก้ไช','class="btn btn-mini"')?>
+			<?php echo anchor('users/admin/users/form/'.$user->id,'แก้ไข','class="btn btn-mini"')?>
 			<?php echo anchor('users/admin/users/delete/'.$user->id,'ลบ','class="btn btn-mini" onclick="return confirm(\''.lang('confirm_delete').'\')"')?>
 		</td>
 	</tr>

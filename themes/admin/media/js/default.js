@@ -1,23 +1,33 @@
 $(document).ready(function(){
-    $("select[name=province_id]").on("change",function(){
-        $.post('home/get_amphur',{
-                'province_id' : $(this).val()
-            },function(data){
-                $("#amphur").html(data);
-            });
-    });
+	$('#amphur_id').chainedSelect({parent: '#province_id',url: 'ajax/get_amphur',value: 'id',label: 'text'});
+	// $('#district_id').chainedSelect({parent: '#amphur_id',url: 'location/ajax_district',value: 'id',label: 'text'});
+       
+    // $("select[name=province_id]").on("change",function(){
+        // $.post('home/get_amphur',{
+                // 'province_id' : $(this).val()
+            // },function(data){
+                // $("#amphur").html(data);
+            // });
+    // });
     
-    $("select[name=adf_category_id]").on("change",function(){
-        $.post('home/get_adf_sub_category',{
-                'id' : $(this).val()
-            },function(data){
-                $(".sub_category").html(data);
-            });
-    });
+    $('select[name=adf_sub_category_id]').chainedSelect({parent: 'select[name=adf_category_id]',url: 'ajax/get_adf_sub_categories',value: 'id',label: 'text'});
+    
+    // $("select[name=adf_category_id]").on("change",function(){
+        // $.post('home/get_adf_sub_category',{
+                // 'id' : $(this).val()
+            // },function(data){
+                // $(".sub_category").html(data);
+            // });
+    // });
     
     $('li.select-icon').click(function(){
     	var icon = $(this).find('i').attr('class');
     	$('#iconInput').val(icon);
+    });
+    
+    $('li.select-category').click(function(){
+    	var category = $(this).find('input[type="hidden"]').val();
+    	$('#categoryInput').val(category);
     });
     
     $("form").validate({
