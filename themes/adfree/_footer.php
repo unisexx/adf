@@ -19,7 +19,7 @@
         <div class="span3">
             <div class="widget">
                 <h4>บทความ</h4>
-                <ul class="nav nav-list regular">
+                <ul class="regular">
                     <?php echo modules::run('contents/inc_footer_articles'); ?>
                 </ul>
             </div>
@@ -27,7 +27,7 @@
         <div class="span3">
             <div class="widget">
                 <h4>ลิ้งค์เพื่อนบ้าน</h4>
-                <ul class="nav nav-list regular">
+                <ul class="regular">
                     <?php echo modules::run('contents/inc_footer_weblinks'); ?>
                 </ul>
             </div>
@@ -47,7 +47,7 @@
                     </fieldset>
                 </form>
                 <ul class="social_small">
-                    <li class="facebook first"><a href="#" title="Facebook">Facebook</a></li>
+                    <li class="facebook first"><a href="https://www.facebook.com/adfree.in.th" title="Facebook" target="_blank">Facebook</a></li>
                     <li class="twitt"><a href="#" title="Twitter">Twitter</a></li>
                     <li class="googleplus"><a href="#" title="google plus">Google plus</a></li>
                     <li class="flickr"><a href="#" title="flickr">Flickr</a></li>
@@ -62,7 +62,7 @@
         <div class="row">
             <div class="span6">
                 <p>
-                    © Adfree 2013 - All right reserved
+                    © <a href="http://www.adfree.in.th">Adfree</a> 2013 - All right reserved
                 </p>
             </div>
             <div class="span6">
@@ -115,4 +115,12 @@
         <a class="btn" data-dismiss="modal">ปิด</a>
     </div>
     </form>
+</div>
+
+<div id="FBSlideLikeBox_left">
+    <div id="FBSlideLikeBox2_left">
+        <div id="FBSlideLikeBox3_left">
+            <iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fadfree.in.th&amp;width=292&amp;colorscheme=light&amp;show_faces=true&amp;border_color=ffffff&amp;stream=false&amp;header=false&amp;height=400" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:400px;" allowTransparency="true"></iframe>
+        </div>
+    </div>
 </div>

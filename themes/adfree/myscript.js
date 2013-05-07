@@ -97,6 +97,13 @@ $(document).ready(function(){
     $('#footer-back-to-top').click(function() {
         $('body,html').animate({scrollTop:0},800);
     }); 
+    
+    $("#FBSlideLikeBox_left").mouseenter(function(){
+		$(this).stop().animate({left: 0}, "normal");
+    }).mouseleave(function()
+    {
+		$(this).stop().animate({left: -292}, "normal");
+    });
 	
 	$('.wrapthumb').click(function(){
 		$('.loading').show();

@@ -20,22 +20,35 @@
                 <img data-src="holder.js/300x300" alt="<?php echo $adfree->title?>" src="http://placehold.it/300x300">
             <?php endif;?>
         </div>
-        <div class="row thumbrow">
+        <div class="thumbrow">
         <?php foreach($attachs as $attach):?>
             <div class="span1 wrapthumb thumbnail">
                 <input type="hidden" name="thumbnail_id" value="<?php echo $attach->id?>">
-                <img src="<?php echo $attach->thumb?>">
+                <img src="<?php echo $attach->url?>">
             </div>
         <?php endforeach;?>
+            <br clear="all">
+            <div class="pull-right">
+                จำนวนผู้เข้าชม <?php echo $adfree->counter?> ครั้ง<br>
+                หมายเลขประกาศ : <?php echo $adfree->id?>
+            </div><br>
+            <?php echo addThis()?>
         </div>
         
         <hr>
         <div>
             <h3>รายละเอียดสินค้า</h3>
             <div>
+                <strong>
+                <div class="span2">ความต้องการ : <?php echo $adfree->adf_want->title?></div>
+                <div class="span2">ราคา : <?php echo ($adfree->price)?number_format($adfree->price).' บาท':'ไม่ระบุราคา';?></div>
+                <div class="span2">สภาพสินค้า : <?php echo $adfree->adf_type->title?></div>
+                </strong>
+                <br clear="all"><br>
             	<?php echo $adfree->detail?>
             </div>
         </div>
+        <hr>
     </div>
     
     <div class="span4">
