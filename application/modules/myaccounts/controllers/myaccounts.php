@@ -53,6 +53,7 @@ class Myaccounts extends Public_Controller
 			if(($_POST['captcha'] == $captcha) && !empty($captcha)){
 	        	$adfree = new Adfree($id);
 				$_POST['status'] = 'approve';
+                $_POST['active'] = date('Y-m-d H:i:s');
 				$_POST['slug'] = clean_url($_POST['title']);
 				$_POST['image'] = @$_POST['url'][0];
 				if(!$id)$_POST['user_id'] = $this->session->userdata('id');

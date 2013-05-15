@@ -1,28 +1,4 @@
 <?php echo modules::run('adfrees/search_form')?>
-
-<!-- <div id="main" role="main">
-  <ul id="tiles">
-  	<?php foreach($adfrees as $key=>$adfree):?>
-  		<li>
-  			<a href="adfrees/view/<?php echo $adfree->id?>">
-	            <?php if($adfree->image):?>
-	                <img src="<?php echo $adfree->image?>">
-	            <?php else:?>
-	                <img alt="ไม่มีรูปภาพ" src="http://placehold.it/270x190">
-	            <?php endif;?>
-	            <div class="thumb-detail-block">
-	                <p class="price-on-img"><?php echo ($adfree->price)?$adfree->price.' บาท':'ไม่ระบุราคา'; ?></p>
-	            	<h6><?php echo $adfree->title?></h6>
-	            	<p><?php echo $adfree->adf_sub_category->title?></p>
-	            	<p><i class="icon-map-marker"></i> <?php echo $adfree->user->amphur->amphur_name?> <?php echo $adfree->user->province->name?></p>
-	            	<p><i class="icon-calendar"></i> <?php echo mysql_to_th($adfree->updated,'f',TRUE)?></p>
-	            </div>
-            </a>
-		</li>
-	<?php endforeach;?>
-  </ul>
-</div> -->
-
 <ul class="thumbnails">
     <?php foreach($adfrees as $adfree):?>
     <li class="span3">
@@ -48,3 +24,4 @@
     </li>
     <?php endforeach;?>
 </ul>
+<?php echo $adfrees->pagination()?>

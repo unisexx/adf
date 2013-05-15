@@ -24,3 +24,5 @@
     </li>
     <?php endforeach;?>
 </ul>
+<a href="adfrees"><div class="btn btn-primary pull-right">ดูประกาศทั้งหมด</div></a>
+<br clear="all">
