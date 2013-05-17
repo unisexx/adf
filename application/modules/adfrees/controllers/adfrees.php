@@ -45,6 +45,8 @@ class Adfrees extends Public_Controller {
         if(@$_GET['category'] != "ทุกหมวด" and @$_GET['category'])$data['adfrees']->or_where_related_adf_sub_category('slug',$_GET['category']);
         if(@$_GET['province_id'])$data['adfrees']->where_related('users', 'province_id', $_GET['province_id']);
         $data['adfrees']->order_by('active','desc')->get_page();
+		
+		$this->template->title('ฟรีโพสต์ ฟรีประกาศ ลงโฆษณาฟรี ซื้อง่าย ขายคล่อง - adfree.in.th');
         $this->template->build('index',$data);
     }
     
@@ -54,6 +56,7 @@ class Adfrees extends Public_Controller {
         $data['adfrees'] = new Adfree();
         $data['adfrees']->where_related_adf_category('slug', $category_slug);
         $data['adfrees']->order_by('active','desc')->get_page();
+		$this->template->title($category_slug.' ฟรีประกาศ ซื้อง่าย ขายคล่อง - adfree.in.th');
         $this->template->build('index',$data);
     }
     
@@ -63,6 +66,7 @@ class Adfrees extends Public_Controller {
         $data['adfrees'] = new Adfree();
         $data['adfrees']->where_related_adf_sub_category('slug', $sub_category_slug);
         $data['adfrees']->order_by('active','desc')->get_page();
+		$this->template->title($sub_category_slug.' ฟรีประกาศ ซื้อง่าย ขายคล่อง - adfree.in.th');
         $this->template->build('index',$data);
     }
     
@@ -78,6 +82,7 @@ class Adfrees extends Public_Controller {
 		$data['adfrees'] = new Adfree();
 		$data['adfrees']->where('user_id = '.$data['adfree']->user_id)->order_by('active desc')->get(6);
 		
+		$this->template->title($data['adfree']->title.' - adfree.in.th');
         $this->template->build('view',$data);
     }
     

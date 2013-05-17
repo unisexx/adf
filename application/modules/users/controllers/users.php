@@ -6,6 +6,7 @@ class Users extends Public_Controller{
     }
     
     function register(){
+    	$this->template->title('สมัครสมาชิก');
         $this->template->build('register');
     }
     
@@ -111,6 +112,7 @@ class Users extends Public_Controller{
     }
     
     function forget_pass(){
+    	$this->template->title('ลืมรหัสผ่าน');
         $this->template->build('forget_pass');
     }
     

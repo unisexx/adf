@@ -65,6 +65,9 @@ class Contents extends Public_Controller
 		$data['content'] = new Content($id);
 		$data['type'] = $data['content']->module;
 		$data['type_name'] = $this->array[$data['content']->module];
+		
+		$this->template->title($data['content']->title.' - adfree.in.th');
+		
 		if($type == 'histories'){
 			$this->template->build('view_onepage',$data);
 		}elseif($type == 'vdos'){
