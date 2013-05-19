@@ -32,13 +32,21 @@ $(document).ready(function(){
 		// });
     // }
     
+    // if ( $('.user-detail')[0] ) { 
+		// $('.user-detail').height($(".afx").height());
+		// var position = $('.afx').position();
+		// $('.afx').affix({
+		    // offset: {top: position.top-55}
+		// });
+	// }
+    
 	var currentTallest = 0,
-     currentRowStart = 0,
-     rowDivs = new Array(),
-     $el,
-     topPosition = 0;
+	currentRowStart = 0,
+	rowDivs = new Array(),
+	$el,
+	topPosition = 0;
 
-	 $('.thumb-detail-block').each(function() {
+	 $('.thumb-detail-block,.adf-category').each(function() {
 	
 	   $el = $(this);
 	   topPostion = $el.position().top;
@@ -69,7 +77,7 @@ $(document).ready(function(){
 	     rowDivs[currentDiv].height(currentTallest);
 	   }
 	   
-	 });
+	});
     
     $('ul.nav li.dropdown').hover(function () {
         $(this).find('.dropdown-menu').stop(true, true).delay(0).fadeIn();

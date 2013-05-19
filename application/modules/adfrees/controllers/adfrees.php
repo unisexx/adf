@@ -80,7 +80,7 @@ class Adfrees extends Public_Controller {
         $data['attachs']->where("module = 'adfrees' and content_id = ".$id)->order_by('id','asc')->get();
         
 		$data['adfrees'] = new Adfree();
-		$data['adfrees']->where('user_id = '.$data['adfree']->user_id)->order_by('active desc')->get(6);
+		$data['adfrees']->where('user_id = '.$data['adfree']->user_id)->order_by('active desc')->get(8);
 		
 		$this->template->title($data['adfree']->title.' - adfree.in.th');
         $this->template->build('view',$data);

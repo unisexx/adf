@@ -101,7 +101,7 @@
             </tr>
         </table>
     </div>
-    <div class="span9">
+    <div class="span12">
 		<h3>ประกาศอัพเดทล่าสุดของ <?php echo $adfree->user->username?></h3>
 		<ul class="thumbnails">
             <?php foreach($adfrees as $adfree):?>
