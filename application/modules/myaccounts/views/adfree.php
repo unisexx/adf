@@ -17,7 +17,7 @@
             <th></th>
             <th></th>
             <th></th>
-            <th><a href="myaccounts/adfree_form"><div class="btn btn-primary"><i class="icon-plus icon-large"></i> เพิ่มรายการ</div></a></th>
+            <th width="185"><a href="myaccounts/adfree_form"><div class="btn btn-primary"><i class="icon-plus icon-large"></i> เพิ่มรายการ</div></a></th>
         </tr>
     </thead>
     <tbody>
