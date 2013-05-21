@@ -1,3 +1,12 @@
+<style>
+.sidebar{position:absolute; width:300px;}
+	.sidebar.affix {
+    position: fixed;
+  }
+  .sidebar.affix-bottom {
+    <?php echo ($adfrees->result_count() > 3)?'bottom: 1530px;':'bottom: 1100px;';?>
+  }
+</style>
 <div class="row">
     <div class="span8">
         <ul class="breadcrumb">
@@ -52,6 +61,7 @@
     </div>
     
     <div class="span4">
+    	<div class="sidebar" data-spy="affix" <?php echo ($adfrees->result_count() > 3)?'data-offset-bottom="1530"':'data-offset-bottom="1100"';?>>
         <div class="btn btn-xlarge btn-primary">
             <?php echo ($adfree->price)?number_format($adfree->price).' บาท':'ไม่ระบุราคา'; ?>
         </div>
@@ -100,6 +110,7 @@
                 <td><a href="adfrees/member/<?php echo $adfree->user_id?>" class="pull-right btn btn-small btn-success">ดูสินค้าอื่นๆของ <?php echo $adfree->user->username?></a></td>
             </tr>
         </table>
+        </div>
     </div>
     <div class="span12">
 		<h3>ประกาศอัพเดทล่าสุดของ <?php echo $adfree->user->username?></h3>
