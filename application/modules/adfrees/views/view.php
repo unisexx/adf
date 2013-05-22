@@ -24,7 +24,7 @@
         <?php foreach($attachs as $attach):?>
             <div class="span1 wrapthumb thumbnail">
                 <input type="hidden" name="thumbnail_id" value="<?php echo $attach->id?>">
-                <img src="<?php echo $attach->url?>">
+                <img src="<?php echo $attach->thumb?>">
             </div>
         <?php endforeach;?>
             <br clear="all">
