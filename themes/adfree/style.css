@@ -1,4 +1,4 @@
-body{padding-top: 60px; font-size: 13.5px !important;}
+body{padding-top: 60px; font-size: 13.5px !important; position:relative;}
 a{color:#444;}
 a:hover{text-decoration:none;}
 .well-non{border:none !important; background-color: #fff !important;}
@@ -280,26 +280,14 @@ border-radius: 4px;
 .wraptocenter *,.wrapthumb * {
     vertical-align: middle;
 }
-/*\*//*/
-.wraptocenter {
-    display: block;
-}
-.wraptocenter span {
-    display: inline-block;
-    height: 100%;
-    width: 1px;
-}
-/**/
-
-<!--[if lt IE 8]>
-.wraptocenter span {
-    display: inline-block;
-    height: 100%;
-}
-<![endif]-->
 
 
-/************ breadcrumb wizard ************/
+.table.affix {
+    position: fixed; 
+    top: 60px !important; 
+    bottom: auto;
+}
+/*********** breadcrumb wizard ************/
 .wizard a {
     padding: 10px 12px 10px;
     margin-right: 5px;

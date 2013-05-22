@@ -10,7 +10,7 @@
 <script type="text/javascript" src="themes/adfree/myscript.js"></script>
 <?php echo js_notify(); ?>
 <?php echo js_lightbox(); ?>
-
+<div id="fb-root"></div>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];

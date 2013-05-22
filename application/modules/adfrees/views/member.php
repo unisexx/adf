@@ -5,7 +5,7 @@
 
 <div class="row">
     <div class="span3">
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered table-hover" style="width:220px;" data-spy="affix" data-offset-top="52">
             <tr><td><a href="adfrees/member/<?php echo $adfrees->user_id?>"><i class="icon-chevron-right"></i> ประกาศทั้งหมด (<?php echo $allcount->result_count();?>)</a></td></tr>
             <?php foreach($sub_categories as $sub_category):?>
                 <?php $count = new Adfree();?>
