@@ -60,8 +60,8 @@
     
     
     <div class="container">
+    	<?php echo modules::run('adfrees/inc_home'); ?>
         <?php echo modules::run('adfrees/inc_home_category'); ?>
-        <?php echo modules::run('adfrees/inc_home'); ?>
     </div>
     <?php include "_footer.php";?>
     <?php include "_script.php";?>
