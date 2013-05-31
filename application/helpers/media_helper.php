@@ -238,7 +238,7 @@ if(!function_exists('uppic_form'))
                                 upic_type = "htmlfull";
                                 upic_buttoncss += "color:#000000;";
                                 function upic_custom(urlshow, urlfull, urlthumb) {
-                                    $(".uppic").append("<div style=margin-bottom:5px;><img src="+urlthumb+" width=50> <input class=span5  type=text name=url[] value="+urlfull+"> <input type=hidden name=thumb[] value="+urlthumb+"> <input class=btn btn-small type=button name=deluppic value=ลบ></div>");
+                                    $(".uppic").append("<div style=margin-bottom:5px; class=uppic-blk><img src="+urlthumb+" width=50> <input class=span5  type=text name=url[] value="+urlfull+"> <input type=hidden name=thumb[] value="+urlthumb+"> <input class=btn btn-small type=button name=del-uppic value=ลบ></div>");
                                 }
                                 </script><div class="uppic"></div>';
         return $js; 

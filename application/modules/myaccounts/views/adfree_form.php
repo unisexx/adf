@@ -44,30 +44,45 @@
     </div>
   </div>
   <div class="control-group">
+    <label class="control-label" for="tag">คำค้น</label>
+    <div class="controls">
+      <input type="text" name="tags" placeholder="คีย์เวิร์ดของสินค้า" class="tm-input tm-input-success"/> กดปุ่ม Enter เพื่อกรอกคำต่อไป (มีผลต่อการค้นหาใน google)
+    </div>
+  </div>
+  <div class="control-group">
     <label class="control-label" for="price">ราคา</label>
     <div class="controls">
       <input type="text" id="price" name="price" class="span2" value="<?php echo $adfree->price?>"> บาท
     </div>
   </div>
-  <!-- <div class="control-group">
-    <label class="control-label" for="tag">คำค้น</label>
-    <div class="controls">
-      <input type="text" name="tags" placeholder="Tags" class="tagManager" value=""/>
-    </div>
-  </div> -->
   <div class="control-group">
     <label class="control-label" for="inputCaptcha">อัพโหลดรูป</label>
     <div class="controls">
         <?php if($adfree->id):?>
-        <?php foreach($attachs as $row):?>
-            <div class="uppic-blk" style=margin-bottom:5px;>
-                <input type="hidden" name="attach_id[]" value="<?=$row->id?>">
-                <img src="<?php echo $row->thumb?>" width=50> 
-                <input class="span5"  type="text" name=url[] value="<?php echo $row->url?>"> 
-                <input type="hidden" name="thumb[]" value="<?php echo $row->thumb?>"> 
-                <input class="btn btn-small del-uppic" type="button" name="deluppic" value="ลบ">
-            </div>
-        <?php endforeach;?>
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ภาพหน้าปก</th>
+                    <th>รูปภาพสินค้า</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($attachs as $row):?>
+                <tr class="uppic-blk">
+                    <td>
+                        <label><input type="radio" name="image" value="<?php echo $row->url?>" <?php echo ($row->url == $adfree->image)?'checked':'';?>></label>
+                    </td>
+                    <td>
+                        <input type="hidden" name="attach_id[]" value="<?=$row->id?>">
+                        <img src="<?php echo $row->thumb?>" width=50> 
+                        <input class="span5"  type="text" name=url[] value="<?php echo $row->url?>"> 
+                        <input type="hidden" name="thumb[]" value="<?php echo $row->thumb?>"> 
+                        <input class="btn btn-danger btn-small del-uppic" type="button" name="deluppic" value="ลบ">
+                    </td>
+                </tr>
+                <?php endforeach;?>
+            </tbody>
+        </table>
         <?php endif;?>
         <?php echo uppic_form();?>
     </div>
@@ -86,3 +101,12 @@
     </div>
   </div>
 </form>
+
+<?php $tags = explode(",",$adfree->tags);?>
+<script>
+$(document).ready(function(){
+    $(".tm-input").tagsManager({maxTags: 5,prefilled: 
+        [<?php foreach($tags as $tag):?>"<?php echo $tag?>",<?php endforeach;?>]
+    });
+});
+</script>

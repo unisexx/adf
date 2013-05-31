@@ -33,6 +33,8 @@ $(document).ready(function(){
 		// });
     // }
     
+    //$(".tm-input").tagsManager({maxTags: 5});
+    
     // if ( $('.user-detail')[0] ) { 
 		// $('.user-detail').height($(".afx").height());
 		// var position = $('.afx').position();
@@ -116,7 +118,7 @@ $(document).ready(function(){
 	
 	$('.wrapthumb').click(function(){
 		$('.loading').show();
-		$(this).css('background','#ddd').siblings().css('background','#fff');
+		$(this).addClass('active').siblings().removeClass('active');
 		$.post('adfrees/getImg', {
             "id":$(this).find('input[name=thumbnail_id]').val()
         },function(data){
@@ -125,13 +127,19 @@ $(document).ready(function(){
         });
 	});
 	
-	$('.del-uppic').click(function(){
+	$('body').on('click','.del-uppic',function(){
 		if(confirm('ต้องการลบรูปนี้')){
 			var id = $(this).closest('.uppic-blk').find('input[name="attach_id[]"]').val();
 			$.post('myaccounts/delete_uppic', {
                 "id":id
             });
-            $(this).closest(".uppic-blk").fadeOut();
+            $(this).closest(".uppic-blk").fadeOut(300, function() { $(this).remove(); });
+		}
+	});
+	
+	$('body').on('click','input[name=del-uppic]',function(){
+		if(confirm('ต้องการลบรูปนี้')){
+            $(this).closest(".uppic-blk").fadeOut(300, function() { $(this).remove(); });
 		}
 	});
 	

@@ -6,11 +6,11 @@
 	<title><?php echo $template['title'] ?></title>
 	<?php echo $template['metadata'] ?>
 	<?php include "_css.php";?>
+	<?php include "_script.php";?>
 </head>
 <body>
 	<?php include "_header.php";?>
     <div class="container"><?php echo $template['body'] ?></div>
 	<?php include "_footer.php";?>
-    <?php include "_script.php";?>
 </body>
 </html>

@@ -11,7 +11,7 @@
                 <?php $count = new Adfree();?>
                 <tr>
                     <td>
-                        <a href="adfrees/member/<?php echo $adfrees->user_id?>/<?php echo $sub_category->adf_sub_category_id?>"><i class="icon-chevron-right"></i> <?php echo $sub_category->adf_sub_category->title?> (<?php echo $count->where("adf_sub_category_id",$sub_category->adf_sub_category_id)->get()->result_count();?>)</a>
+                        <a href="adfrees/member/<?php echo $adfrees->user_id?>/<?php echo $sub_category->adf_sub_category_id?>"><i class="icon-chevron-right"></i> <?php echo $sub_category->adf_sub_category->title?> (<?php echo $count->where("adf_sub_category_id = ".$sub_category->adf_sub_category_id." and user_id = ".$adfrees->user_id)->get()->result_count();?>)</a>
                     </td>
                 </tr>
             <?php endforeach;?>

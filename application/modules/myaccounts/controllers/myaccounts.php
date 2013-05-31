@@ -55,7 +55,8 @@ class Myaccounts extends Public_Controller
 				$_POST['status'] = 'approve';
                 $_POST['active'] = date('Y-m-d H:i:s');
 				$_POST['slug'] = clean_url($_POST['title']);
-				$_POST['image'] = @$_POST['url'][0];
+                $_POST['tags'] = $_POST['hidden-tags'];
+				$_POST['image'] = ($_POST['image'] == "")?@$_POST['url'][0]:$_POST['image'];
 				if(!$id)$_POST['user_id'] = $this->session->userdata('id');
 				$adfree->from_array($_POST);
 				$adfree->save();

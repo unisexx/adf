@@ -73,8 +73,6 @@ class Adfrees extends Public_Controller {
     function view($id){
         $data['adfree'] = new Adfree($id);
         $data['adfree']->counter();
-        $data['attach'] = new Attach();
-        $data['attach']->where("module = 'adfrees' and content_id = ".$id)->order_by('id','asc')->get(1);
         
         $data['attachs'] = new Attach();
         $data['attachs']->where("module = 'adfrees' and content_id = ".$id)->order_by('id','asc')->get();
@@ -83,6 +81,7 @@ class Adfrees extends Public_Controller {
 		$data['adfrees']->where('user_id = '.$data['adfree']->user_id)->order_by('active desc')->get(8);
 		
 		$this->template->title($data['adfree']->title.' - adfree.in.th');
+        $this->template->append_metadata( meta('keywords',$data['adfree']->tags));
         $this->template->build('view',$data);
     }
     

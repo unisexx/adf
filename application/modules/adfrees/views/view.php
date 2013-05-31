@@ -23,15 +23,15 @@
 		<div class="loading-blk"><img class="loading" src="media/images/ajax-loader.gif"></div>
         
         <div class="wraptocenter"><span></span>
-            <?php if($attach->url):?>
-                <img src="<?php echo $attach->url?>" alt="<?php echo $adfree->title?>">
+            <?php if($adfree->image):?>
+                <img src="<?php echo $adfree->image?>" alt="<?php echo $adfree->title?>">
             <?php else:?>
                 <img data-src="holder.js/300x300" alt="<?php echo $adfree->title?>" src="http://placehold.it/300x300">
             <?php endif;?>
         </div>
         <div class="thumbrow">
         <?php foreach($attachs as $attach):?>
-            <div class="span1 wrapthumb thumbnail">
+            <div class="span1 wrapthumb thumbnail<?php echo ($attach->url == $adfree->image)?' active':'';?>">
                 <input type="hidden" name="thumbnail_id" value="<?php echo $attach->id?>">
                 <img src="<?php echo $attach->thumb?>">
             </div>
@@ -55,6 +55,8 @@
                 </strong>
                 <br clear="all"><br>
             	<?php echo $adfree->detail?>
+            	<br clear="all">
+            	<h4><small><i>คำค้น : <?php echo $adfree->tags?></i></small></h4>
             </div>
         </div>
         <hr>
