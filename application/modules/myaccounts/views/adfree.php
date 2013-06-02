@@ -9,14 +9,14 @@
     <input type="submit" class="btn" value="ค้นหา">
 </form> -->
 
-<table class="table table-hover">
+<table class="table table-striped table-bordered table-hover">
     <thead>
         <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th>สถานะ</th>
+            <th>ภาพหน้าปก</th>
+            <th>รายละเอียด</th>
+            <th>ราคา</th>
+            <th>สถานที่</th>
             <th width="185"><a href="myaccounts/adfree_form"><div class="btn btn-primary"><i class="icon-plus icon-large"></i> เพิ่มรายการ</div></a></th>
         </tr>
     </thead>
@@ -24,7 +24,7 @@
         <?php foreach($adfrees as $key=>$adfree):?>
             <tr>
                 <td class="middle">
-                    <div><?php echo mysql_to_th($adfree->updated)?></div>
+                    <input type="checkbox" name="status" value="<?php echo $adfree->id ?>" <?php echo ($adfree->status=="approve")?'checked="checked"':'' ?> <?php echo (@$_POST['status']=="approve")?'':'' ?> />
                 </td>
                 <td>
                     <a href="adfrees/view/<?php echo $adfree->id?>">
@@ -36,15 +36,12 @@
                     </a>
                 </td>
                 <td>
-                    <a href="adfrees/view/<?php echo $adfree->id?>"><strong><?php echo $adfree->title?></strong></a>
+                    <a href="adfrees/view/<?php echo $adfree->id?>" target="_blank"><strong><?php echo $adfree->title?></strong></a>
                     <div class="muted"><?php echo $adfree->adf_category->title?> » <?php echo $adfree->adf_sub_category->title?></div>
+                    <?php echo mysql_to_th($adfree->updated)?>
                 </td>
                 <td>
-                    <?php if($adfree->price):?>
-                        <strong><?php echo $adfree->price?> บาท</strong>
-                    <?php else:?>
-                        <strong>ไม่ระบุราคา</strong>
-                    <?php endif;?>
+                    <?php echo ($adfree->price)?number_format($adfree->price):'ไม่ระบุราคา'; ?>
                 </td>
                 <td class="muted">
                     <div><?php echo $adfree->user->province->name?></div>

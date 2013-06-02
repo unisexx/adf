@@ -29,7 +29,7 @@
                 <img data-src="holder.js/300x300" alt="<?php echo $adfree->title?>" src="http://placehold.it/300x300">
             <?php endif;?>
         </div>
-        <div class="thumbrow">
+        <div class="thumbrow row">
         <?php foreach($attachs as $attach):?>
             <div class="span1 wrapthumb thumbnail<?php echo ($attach->url == $adfree->image)?' active':'';?>">
                 <input type="hidden" name="thumbnail_id" value="<?php echo $attach->id?>">

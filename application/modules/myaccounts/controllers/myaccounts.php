@@ -33,7 +33,7 @@ class Myaccounts extends Public_Controller
         if(@$_GET['adf_category_id'])$data['adfrees']->where('adf_category_id',$_GET['adf_category_id']);
         if(@$_GET['adf_sub_category_id'])$data['adfrees']->where("adf_sub_category_id = ".$_GET['adf_sub_category_id']);
         if(@$_GET['province_id'])$data['adfrees']->where_related('users', 'province_id', $_GET['province_id']);
-        $data['adfrees']->where('user_id = '.user_login()->id)->order_by('updated','desc')->get_page();
+        $data['adfrees']->where('user_id = '.user_login()->id)->order_by('active','desc')->get_page();
         $this->template->build('adfree',$data);
     }
     

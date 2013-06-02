@@ -278,6 +278,7 @@ border-radius: 4px;
     vertical-align: middle;
     background:#fafafa;
     width: 60px;
+    margin-bottom:8px;
 }
 .wraptocenter *,.wrapthumb * {
     vertical-align: middle;
