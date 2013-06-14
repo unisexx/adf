@@ -9,6 +9,8 @@
 </style>
 <div class="row">
     <div class="span8">
+    	<link rel="image_src" href="<?php echo $adfree->image?>">
+    	
         <ul class="breadcrumb">
             <li><a href="home">หน้าแรก</a> <span class="divider">/</span></li>
             <li><a href="adfrees/c/<?php echo $adfree->adf_category->slug?>"><?php echo $adfree->adf_category->title?></a> <span class="divider">/</span></li>
