@@ -95,7 +95,7 @@
         </div>
         <fieldset>
             <div class="control-group">
-                <label class="control-label" for="inputLogin">User name</label>
+                <label class="control-label" for="inputLogin">Username</label>
                 <div class="controls">
                     <input type="text" class="input-xlarge" id="inputLogin" name="username">
                     <span class="muted">(a-Z0-9)</span>
@@ -111,6 +111,7 @@
         </fieldset>
     </div>
     <div class="modal-footer">
+        <!-- <fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button> -->
         <button type="submit" id="login" class="btn btn-primary">เข้าสู่ระบบ</button>
         <a class="btn" data-dismiss="modal">ปิด</a>
     </div>
