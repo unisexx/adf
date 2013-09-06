@@ -33,6 +33,20 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
 
 $(document).ready(function(){
     
+    // fb-traffic-pop
+	$().facebookTrafficPop({
+	    'timeout':'30', 
+	    'title':'มาเป็นแฟนกันนะคะ ^-^',
+	    'message':'ติดตามประกาศของคุณบน facebook กดไลค์เลยจ้า <br>- กดไลค์อีกครั้งแล้วจะไม่แสดงอีกต่อไปค่ะ',
+	    'url':'https://www.facebook.com/adfree.in.th',
+	    'lang':'en',
+	    'wait':'120',
+	    'opacity':'0.80',
+	    'advancedClose':false,
+	    'closeable':false,
+	    'showfaces':true
+    });
+    
 	// var pathname = $(location).attr('href');
     // var substr = pathname.split('/');
     // //alert(substr[5]);

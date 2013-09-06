@@ -1,12 +1,3 @@
-<style>
-.sidebar{position:absolute; width:300px;}
-	.sidebar.affix {
-    position: fixed;
-  }
-  .sidebar.affix-bottom {
-    <?php echo ($adfrees->result_count() > 3)?'bottom: 1530px;':'bottom: 1100px;';?>
-  }
-</style>
 <div class="row">
     <div class="span8">
     	<link rel="image_src" href="<?php echo $adfree->image?>">
@@ -65,7 +56,7 @@
     </div>
     
     <div class="span4">
-    	<div class="sidebar" data-spy="affix" <?php echo ($adfrees->result_count() > 3)?'data-offset-bottom="1530"':'data-offset-bottom="1100"';?>>
+    	<div class="sidebar">
         <div class="btn btn-xlarge btn-primary">
             <?php echo ($adfree->price)?number_format($adfree->price).' บาท':'ไม่ระบุราคา'; ?>
         </div>
