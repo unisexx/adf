@@ -162,7 +162,7 @@ function fbLikeDump(action){
 	if(action == true){
 				
 	// Create the cookie to remember the user clicked like, 30 is the number of days it will expire in.
-	createCookie('fblikepop', 'true', 30);
+	createCookie('fblikepop', 'true', 365);
 				
 	} // End if
 			
