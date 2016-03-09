@@ -74,5 +74,9 @@ class Home extends Public_Controller {
             echo form_dropdown('adf_sub_category_id',get_option('id','title','adf_sub_categories','where adf_category_id = '.$_POST['id'].' order by id asc'),'','','--- เลือกหมวดหมู่ย่อย ---');
         }
     }
+	
+	function info(){
+		// phpinfo();
+	}
 }
 ?>
