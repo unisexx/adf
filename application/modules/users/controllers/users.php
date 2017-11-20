@@ -164,26 +164,70 @@ class Users extends Public_Controller{
     
     function send_mail($auth_key,$email){
         
-        $config = Array(
-            'protocol' => 'smtp',
-            'smtp_host' => 'ssl://smtp.googlemail.com',
-            'smtp_port' => 465,
-            'smtp_user' => 'noreply.adfree@gmail.com',
-            'smtp_pass' => 'Des@gn;9',
-            'mailtype'  => 'html', 
-            'charset'   => 'utf-8'
-        );
-        $this->load->library('email', $config);
-        $this->email->set_newline("\r\n");
+        // $config = Array(
+        //     'protocol' => 'smtp',
+        //     'smtp_host' => 'ssl://smtp.googlemail.com',
+        //     'smtp_port' => 465,
+        //     'smtp_user' => 'noreply.adfree@gmail.com',
+        //     'smtp_pass' => 'Des@gn;9',
+        //     'mailtype'  => 'html', 
+        //     'charset'   => 'utf-8'
+        // );
+        // $this->load->library('email', $config);
+        // $this->email->set_newline("\r\n");
         
-        // Set to, from, message, etc.
-        $this->email->from('noreply.adfree@gmail.com', 'noreply.adfree');
-        $this->email->to($email); //ส่งถึงใคร
-        $this->email->subject('ยืนยันการเปลี่ยนรหัสผ่านใหม่ - adfree.in.th'); //หัวข้อของอีเมล
-        $this->email->message('สวัสดีครับ<br><br>หากคุณต้องการเปลี่ยนรหัสผ่านใหม่กรุณาคลิกตามลิ้งค์ที่ปรากฏ<br><br>http://www.adfree.in.th/users/repass/'.$auth_key); //เนื้อหาของอีเมล
+        // // Set to, from, message, etc.
+        // $this->email->from('noreply.adfree@gmail.com', 'noreply.adfree');
+        // $this->email->to($email); //ส่งถึงใคร
+        // $this->email->subject('ยืนยันการเปลี่ยนรหัสผ่านใหม่ - adfree.in.th'); //หัวข้อของอีเมล
+        // $this->email->message('สวัสดีครับ<br><br>หากคุณต้องการเปลี่ยนรหัสผ่านใหม่กรุณาคลิกตามลิ้งค์ที่ปรากฏ<br><br>http://www.adfree.in.th/users/repass/'.$auth_key); //เนื้อหาของอีเมล
         
-        $result = $this->email->send();
-        //echo $this->email->print_debugger();
+        // $result = $this->email->send();
+        // //echo $this->email->print_debugger();
+
+        require_once("PHPMailer_v5.1/class.phpmailer.php");  	// ประกาศใช้ class phpmailer กรุณาตรวจสอบ ว่าประกาศถูก path
+        //require_once("PHPMailer_v5.1/class.smtp.php");       	// ประกาศใช้ class phpmailer กรุณาตรวจสอบ ว่าประกาศถูก path
+        $mail = new PHPMailer();
+        $mail->IsSMTP();
+        //Enable SMTP debugging
+        // 0 = off (for production use)
+        // 1 = client messages
+        // 2 = client and server messages
+        $mail->SMTPDebug = 0;
+        $mail->CharSet = "utf-8";
+        //Ask for HTML-friendly debug output
+        $mail->Debugoutput = 'html';
+        //Set the hostname of the mail server
+        $mail->Host = "smtp.gmail.com";
+        //Set the SMTP port number - likely to be 25, 465 or 587
+        $mail->Port = 587;
+        //Set the encryption system to use - ssl (deprecated) or tls
+        $mail->SMTPSecure = 'tls';
+        //Whether to use SMTP authentication
+        $mail->SMTPAuth = true;
+        //Username to use for SMTP authentication
+        $mail->Username = "noreply.adfree@gmail.com";
+        //Password to use for SMTP authentication
+        $mail->Password = "Des@gn;9";
+        //Set who the message is to be sent from
+        $mail->setFrom('noreply.adfree@gmail.com', 'noreply.adfree');
+        //Set who the message is to be sent to
+        $mail->addAddress($email);
+        //Set the subject line
+        $mail->Subject = 'ยืนยันการเปลี่ยนรหัสผ่านใหม่ - adfree.in.th';
+        //Read an HTML message body from an external file, convert referenced images to embedded,
+        //convert HTML into a basic plain-text alternative body
+        //$mail->msgHTML(file_get_contents('content.html'), dirname(__FILE__));
+        $mail->msgHTML('สวัสดีครับ<br><br>หากคุณต้องการเปลี่ยนรหัสผ่านใหม่กรุณาคลิกตามลิ้งค์ที่ปรากฏ<br><br>http://www.adfree.in.th/users/repass/'.$auth_key);
+         
+        //send the message, check for errors
+        if (!$mail->send()) {
+            echo "Mailer Error: " . $mail->ErrorInfo;
+        } else {
+            echo "Message sent!";
+        }
+        // exit();
+        
     }
     
     function account_setting(){
